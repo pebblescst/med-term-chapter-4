@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medical Terminology — Chapter 4</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --gold: #B45309; --gold-light: #FEF3C7; --gold-dark: #3F1C00;
+    --rose: #BE185D; --rose-light: #FCE7F3; --rose-dark: #500724;
+    --teal: #0F766E; --teal-light: #CCFBF1; --teal-dark: #042F2E;
+    --violet: #6D28D9; --violet-light: #EDE9FE; --violet-dark: #2E1065;
+    --slate: #334155; --slate-light: #F1F5F9; --slate-dark: #0F172A;
+    --orange: #C2410C; --orange-light: #FFEDD5; --orange-dark: #431407;
+    --gray-50: #FAFAF8; --gray-100: #F0EFEB; --gray-200: #DCDBD6;
+    --gray-400: #8C8B86; --gray-600: #525049; --gray-900: #18170F;
+    --font: 'DM Sans', sans-serif; --mono: 'DM Mono', monospace;
+    --radius: 10px; --radius-sm: 6px;
+  }
+  body { font-family: var(--font); background: var(--gray-50); color: var(--gray-900); min-height: 100vh; }
+  .module { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+
+  .module-header { background: #fff; border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 1.75rem 2rem; margin-bottom: 1.5rem; display: flex; gap: 1.5rem; align-items: flex-start; }
+  .header-icon { width: 52px; height: 52px; border-radius: var(--radius-sm); background: var(--gold-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .header-icon svg { width: 28px; height: 28px; stroke: var(--gold); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .header-text h1 { font-size: 20px; font-weight: 600; color: var(--gray-900); }
+  .header-text p { font-size: 13px; color: var(--gray-400); margin-top: 3px; }
+  .progress-wrap { margin-top: 14px; display: flex; align-items: center; gap: 10px; }
+  .progress-bg { flex: 1; height: 5px; background: var(--gray-100); border-radius: 3px; overflow: hidden; }
+  .progress-fill { height: 100%; background: var(--gold); border-radius: 3px; transition: width 0.5s cubic-bezier(.4,0,.2,1); width: 0%; }
+  .progress-label { font-size: 12px; color: var(--gray-400); white-space: nowrap; min-width: 40px; text-align: right; }
+
+  .nav-row { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 1.5rem; }
+  .tab { padding: 7px 16px; font-size: 13px; font-family: var(--font); font-weight: 500; border: 1px solid var(--gray-200); border-radius: 100px; background: #fff; color: var(--gray-600); cursor: pointer; transition: all 0.15s; }
+  .tab:hover { border-color: var(--gold); color: var(--gold); }
+  .tab.active { background: var(--gold); border-color: var(--gold); color: #fff; }
+
+  .section { display: none; }
+  .section.active { display: block; animation: fadeIn 0.2s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+  .card { background: #fff; border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+  .card-title { font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 7px; margin-bottom: 12px; }
+  .card-title svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+  @media (max-width: 620px) { .two-col, .three-col { grid-template-columns: 1fr; } }
+
+  .badge { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 20px; }
+  .badge-gold { background: var(--gold-light); color: var(--gold-dark); }
+  .badge-rose { background: var(--rose-light); color: var(--rose-dark); }
+  .badge-teal { background: var(--teal-light); color: var(--teal-dark); }
+  .badge-violet { background: var(--violet-light); color: var(--violet-dark); }
+  .badge-slate { background: var(--slate-light); color: var(--slate-dark); }
+  .badge-orange { background: var(--orange-light); color: var(--orange-dark); }
+
+  .chip { display: inline-block; font-family: var(--mono); font-size: 12px; padding: 1px 7px; border-radius: 4px; background: var(--gray-100); color: var(--gray-900); border: 1px solid var(--gray-200); }
+  .tip-box { border-radius: var(--radius-sm); padding: 10px 14px; font-size: 13px; line-height: 1.6; margin-top: 10px; }
+  .tip-box.gold { background: var(--gold-light); color: var(--gold-dark); border-left: 3px solid var(--gold); }
+  .tip-box.rose { background: var(--rose-light); color: var(--rose-dark); border-left: 3px solid var(--rose); }
+  .tip-box.teal { background: var(--teal-light); color: var(--teal-dark); border-left: 3px solid var(--teal); }
+  .tip-box.violet { background: var(--violet-light); color: var(--violet-dark); border-left: 3px solid var(--violet); }
+  .tip-box.orange { background: var(--orange-light); color: var(--orange-dark); border-left: 3px solid var(--orange); }
+
+  .vs-item { border: 1px solid var(--gray-200); border-radius: var(--radius-sm); padding: 10px 12px; }
+  .vs-head { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
+  .vs-body { font-size: 13px; color: var(--gray-600); line-height: 1.5; }
+
+  /* SKIN LAYER */
+  .layer-stack { display: flex; flex-direction: column; gap: 6px; }
+  .layer { border-radius: var(--radius-sm); padding: 12px 14px; border: 1px solid; }
+  .layer-name { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+  .layer-cf { font-family: var(--mono); font-size: 11px; padding: 1px 5px; border-radius: 3px; margin-left: 6px; }
+  .layer-desc { font-size: 13px; line-height: 1.5; }
+  .layer-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px; }
+
+  /* LESION TABLE */
+  .lesion-row { display: flex; gap: 12px; align-items: flex-start; padding: 9px 0; border-bottom: 1px solid var(--gray-100); }
+  .lesion-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .lesion-row:first-child { padding-top: 0; }
+  .lesion-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; margin-top: 4px; }
+  .lesion-name { font-size: 13.5px; font-weight: 600; color: var(--gray-900); }
+  .lesion-def { font-size: 12.5px; color: var(--gray-600); margin-top: 2px; line-height: 1.4; }
+
+  /* PATHOLOGY */
+  .path-item { display: flex; gap: 10px; align-items: flex-start; padding: 9px 0; border-bottom: 1px solid var(--gray-100); }
+  .path-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .path-item:first-child { padding-top: 0; }
+  .path-name { font-size: 13.5px; font-weight: 600; color: var(--gray-900); }
+  .path-def { font-size: 12.5px; color: var(--gray-600); margin-top: 2px; line-height: 1.4; }
+
+  /* BURNS */
+  .burn-row { display: flex; gap: 12px; align-items: flex-start; padding: 10px 12px; border-radius: var(--radius-sm); margin-bottom: 6px; border: 1px solid; }
+  .burn-deg { font-size: 13px; font-weight: 700; min-width: 80px; }
+  .burn-name { font-size: 13px; font-weight: 600; }
+  .burn-desc { font-size: 12px; color: var(--gray-600); margin-top: 2px; }
+
+  /* SUB TABS */
+  .sub-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 1rem; }
+  .sub-tab { padding: 5px 13px; font-size: 12px; font-family: var(--font); font-weight: 500; border: 1px solid var(--gray-200); border-radius: 100px; background: #fff; color: var(--gray-600); cursor: pointer; transition: all 0.15s; }
+  .sub-tab:hover { border-color: var(--gold); color: var(--gold); }
+  .sub-tab.active { background: var(--gold); border-color: var(--gold); color: #fff; }
+  .vocab-tab-panel { display: none; }
+  .vocab-tab-panel.active { display: block; }
+  .vocab-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .vocab-table th { text-align: left; padding: 8px 10px; color: var(--gray-400); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--gray-200); }
+  .vocab-table td { padding: 8px 10px; border-bottom: 1px solid var(--gray-100); color: var(--gray-900); vertical-align: top; }
+  .vocab-table tr:last-child td { border-bottom: none; }
+  .vocab-table tr:hover td { background: var(--gray-50); }
+  .vocab-table code { font-family: var(--mono); font-size: 12px; color: var(--gold-dark); background: var(--gold-light); padding: 1px 6px; border-radius: 3px; }
+
+  /* FLASHCARDS */
+  .fc-nav { display: flex; align-items: center; gap: 12px; margin-bottom: 1rem; }
+  .fc-counter { font-size: 13px; color: var(--gray-400); flex: 1; text-align: center; }
+  .fc-btn { width: 36px; height: 36px; border: 1px solid var(--gray-200); border-radius: 50%; background: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--gray-600); font-size: 16px; transition: all 0.15s; }
+  .fc-btn:hover { border-color: var(--gold); color: var(--gold); }
+  .flip-wrap { perspective: 1000px; height: 160px; cursor: pointer; user-select: none; }
+  .flip-inner { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; transition: transform 0.5s cubic-bezier(.4,0,.2,1); }
+  .flip-inner.flipped { transform: rotateY(180deg); }
+  .flip-front, .flip-back { position: absolute; inset: 0; backface-visibility: hidden; border-radius: var(--radius); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.5rem; text-align: center; border: 1px solid var(--gray-200); }
+  .flip-front { background: #fff; }
+  .flip-back { background: var(--gold-light); border-color: #FBD96A; transform: rotateY(180deg); }
+  .flip-term { font-size: 24px; font-weight: 600; color: var(--gray-900); font-family: var(--mono); }
+  .flip-hint { font-size: 11px; color: var(--gray-400); margin-top: 6px; text-transform: uppercase; letter-spacing: 0.06em; }
+  .flip-def { font-size: 16px; font-weight: 600; color: var(--gold-dark); }
+  .flip-ex { font-size: 12px; color: var(--gold); margin-top: 6px; font-family: var(--mono); }
+  .fc-shuffle { padding: 6px 14px; font-size: 12px; font-family: var(--font); border: 1px solid var(--gray-200); border-radius: 100px; background: #fff; color: var(--gray-600); cursor: pointer; margin-left: auto; display: block; margin-bottom: 10px; transition: all 0.15s; }
+  .fc-shuffle:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* QUIZ */
+  .quiz-progress { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 1.25rem; }
+  .q-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--gray-200); transition: background 0.2s; }
+  .q-dot.pass { background: var(--teal); }
+  .q-dot.fail { background: #E24B4A; }
+  .quiz-q-text { font-size: 16px; font-weight: 600; color: var(--gray-900); margin-bottom: 1rem; line-height: 1.5; }
+  .quiz-opts { display: flex; flex-direction: column; gap: 8px; margin-bottom: 1rem; }
+  .q-opt { padding: 11px 16px; border: 1px solid var(--gray-200); border-radius: var(--radius-sm); background: #fff; color: var(--gray-900); font-size: 14px; font-family: var(--font); cursor: pointer; text-align: left; transition: all 0.15s; }
+  .q-opt:hover:not(:disabled) { border-color: var(--gold); background: var(--gold-light); }
+  .q-opt.correct { background: var(--teal-light); border-color: var(--teal); color: var(--teal-dark); font-weight: 500; }
+  .q-opt.wrong { background: #FCEBEB; border-color: #E24B4A; color: #501313; }
+  .q-feedback { font-size: 13px; padding: 9px 14px; border-radius: var(--radius-sm); margin-bottom: 1rem; line-height: 1.5; }
+  .q-feedback.correct { background: var(--teal-light); color: var(--teal-dark); }
+  .q-feedback.wrong { background: #FCEBEB; color: #501313; }
+  .quiz-next-btn { padding: 9px 20px; font-size: 13px; font-family: var(--font); font-weight: 500; border: 1px solid var(--gray-200); border-radius: 100px; background: #fff; color: var(--gray-900); cursor: pointer; }
+  .quiz-next-btn:hover { background: var(--gray-50); }
+  .score-wrap { text-align: center; padding: 2rem 0 1rem; }
+  .score-big { font-size: 52px; font-weight: 700; line-height: 1; }
+  .score-big.great { color: var(--teal); }
+  .score-big.ok { color: var(--gold); }
+  .score-big.retry { color: #E24B4A; }
+  .score-msg { font-size: 15px; color: var(--gray-600); margin-top: 8px; margin-bottom: 1.5rem; }
+  .retry-btn { padding: 10px 24px; font-size: 14px; font-family: var(--font); font-weight: 500; border: 1px solid var(--gold); border-radius: 100px; background: var(--gold-light); color: var(--gold-dark); cursor: pointer; transition: all 0.15s; }
+  .retry-btn:hover { background: var(--gold); color: #fff; }
+  .abcde-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 6px; margin-top: 8px; }
+  .abcde-cell { border: 1px solid var(--gray-200); border-radius: var(--radius-sm); padding: 8px 6px; text-align: center; }
+  .abcde-letter { font-size: 20px; font-weight: 700; color: var(--rose); }
+  .abcde-word { font-size: 11px; font-weight: 600; color: var(--gray-900); margin-top: 2px; }
+  .abcde-desc { font-size: 11px; color: var(--gray-600); margin-top: 2px; }
+</style>
+</head>
+<body>
+<div class="module">
+
+  <div class="module-header">
+    <div class="header-icon">
+      <svg viewBox="0 0 24 24"><path d="M4.5 12.5a8 8 0 1115 0"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2"/></svg>
+    </div>
+    <div style="flex:1">
+      <div class="header-text">
+        <h1>Medical Terminology — Chapter 4</h1>
+        <p>Integumentary System &nbsp;·&nbsp; 7 sections &nbsp;·&nbsp; 24 flashcards &nbsp;·&nbsp; 12-question quiz</p>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-bg"><div class="progress-fill" id="prog-fill"></div></div>
+        <div class="progress-label" id="prog-label">0%</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-row" role="tablist">
+    <button class="tab active" onclick="showSection('anatomy',this)">Anatomy</button>
+    <button class="tab" onclick="showSection('lesions',this)">Skin lesions</button>
+    <button class="tab" onclick="showSection('pathology',this)">Pathology</button>
+    <button class="tab" onclick="showSection('burns',this)">Burns</button>
+    <button class="tab" onclick="showSection('procedures',this)">Procedures</button>
+    <button class="tab" onclick="showSection('vocab',this)">Vocabulary</button>
+    <button class="tab" onclick="showSection('flashcards',this)">Flashcards</button>
+    <button class="tab" onclick="showSection('quiz',this)">Quiz</button>
+  </div>
+
+  <!-- ===== ANATOMY ===== -->
+  <div class="section active" id="sec-anatomy">
+    <div class="card">
+      <div class="card-title" style="color:var(--gold)">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        5 functions of the integumentary system
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px">
+        <span class="badge badge-gold">First line of defense</span>
+        <span class="badge badge-rose">Temperature regulation</span>
+        <span class="badge badge-teal">Sensation</span>
+        <span class="badge badge-violet">Synthesis of vitamin D</span>
+        <span class="badge badge-slate">Elimination of waste</span>
+      </div>
+      <div class="tip-box gold" style="margin-top:10px">Specialty: <strong>Dermatology</strong> · Specialist: <strong>Dermatologist</strong> · Combining forms: <span class="chip">derm/o</span> <span class="chip">dermat/o</span> <span class="chip">cutane/o</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title" style="color:var(--rose)">
+        <svg viewBox="0 0 24 24"><path d="M4 6h16M4 10h16M4 14h10M4 18h6"/></svg>
+        3 layers of the skin
+      </div>
+      <div class="layer-stack">
+        <div class="layer" style="background:#FFFBEB;border-color:#FDE68A">
+          <div class="layer-name" style="color:var(--gold-dark)">Epidermis <span class="layer-cf" style="background:#FDE68A;color:var(--gold-dark)">epi- + derm/o</span></div>
+          <div class="layer-desc" style="color:var(--gold-dark)">Outermost layer; stratified squamous epithelium; no blood vessels</div>
+          <div class="layer-tags">
+            <span class="chip">Stratum corneum (corne/o) — outer dead cells</span>
+            <span class="chip">Stratum germinativum — basal layer; new cells</span>
+            <span class="chip">Keratinocytes → keratin (kerat/o)</span>
+            <span class="chip">Melanocytes → melanin (melan/o) — pigment</span>
+          </div>
+        </div>
+        <div class="layer" style="background:#FDF2F8;border-color:#F9A8D4">
+          <div class="layer-name" style="color:var(--rose-dark)">Dermis / Corium <span class="layer-cf" style="background:#F9A8D4;color:var(--rose-dark)">derm/o</span></div>
+          <div class="layer-desc" style="color:var(--rose-dark)">Middle layer; vascular connective tissue with nerves and glands</div>
+          <div class="layer-tags">
+            <span class="chip">Hair follicles (follicul/o)</span>
+            <span class="chip">Sebaceous glands (seb/o) → sebum</span>
+            <span class="chip">Sudoriferous glands (hidr/o) → sweat</span>
+            <span class="chip">Blood &amp; lymphatic vessels</span>
+            <span class="chip">Nerves</span>
+          </div>
+        </div>
+        <div class="layer" style="background:var(--slate-light);border-color:var(--gray-200)">
+          <div class="layer-name" style="color:var(--slate-dark)">Hypodermis / Subcutaneous tissue <span class="layer-cf" style="background:var(--gray-200);color:var(--slate-dark)">sub- + cutane/o</span></div>
+          <div class="layer-desc" style="color:var(--gray-600)">Deepest layer; adipose (fat) tissue (adip/o); insulation and cushioning</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="card-title" style="color:var(--teal)">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M12 12v8"/></svg>
+          Hair (trich/o, pil/o)
+        </div>
+        <div style="font-size:13px;color:var(--gray-600);line-height:1.8">
+          <strong style="color:var(--gray-900)">Follicle</strong> (follicul/o) — tube-like structure housing hair root<br>
+          <strong style="color:var(--gray-900)">Shaft</strong> — visible part above skin<br>
+          <strong style="color:var(--gray-900)">Papilla</strong> (papill/o) — base that receives blood supply
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title" style="color:var(--violet)">
+          <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          Nails (onych/o, ungu/o)
+        </div>
+        <div style="font-size:13px;color:var(--gray-600);line-height:1.8">
+          <strong style="color:var(--gray-900)">Nail body</strong> — visible plate<br>
+          <strong style="color:var(--gray-900)">Nail root</strong> — hidden under skin at base<br>
+          <strong style="color:var(--gray-900)">Nail bed</strong> — skin beneath the nail body<br>
+          <strong style="color:var(--gray-900)">Lunula</strong> — white crescent at base<br>
+          <strong style="color:var(--gray-900)">Eponychium</strong> — cuticle; skin over nail root
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== LESIONS ===== -->
+  <div class="section" id="sec-lesions">
+    <div class="tip-box gold" style="margin-bottom:1rem"><strong>Lesion</strong> — any area of abnormal tissue. <strong>Primary</strong> lesions arise from normal skin; <strong>secondary</strong> lesions arise from changes to primary lesions.</div>
+    <div class="two-col">
+      <div class="card">
+        <div class="card-title" style="color:var(--gold)">Primary lesions — raised/solid</div>
+        <div class="lesion-row"><div class="lesion-dot" style="background:var(--gold)"></div><div><div class="lesion-name">Nodule</div><div class="lesion-def">Solid, raised lesion &gt;0.5 cm; deeper than a papule</div></div></div>
+        <div class="lesion-row"><div class="lesion-dot" style="background:var(--gold)"></div><div><div class="lesion-name">Cyst</div><div class="lesion-def">Encapsulated sac containing fluid or semi-solid material</div></div></div>
+        <div class="lesion-row"><div class="lesion-dot" style="background:var(--gold)"></div><div><div class="lesion-name">Tumor</div><div class="lesion-def">Large solid mass; may be benign or malignant</div></div></div>
+        <div class="lesion-row"><div class="lesion-dot" style="background:var(--gold)"></div><div><div class="lesion-name">Hematoma</div><div class="lesion-def">Collection of blood in tissue causing raised swelling</div></div></div>
+        <div class="lesion-row"><div class="lesion-dot" style="background:var(--rose)"></div><div><div class="lesion-name">Macule</div><div class="lesion-def">Flat, discolored spot ≤1 cm (e.g. freckle)</div></div></div>
+        <div class="lesion-row"><div class="lesion-dot" style="background:var(--rose)"></div><div><div class="lesion-name">Patch</div><div class="lesion-def">Flat, discolored area &gt;1 cm</div></div></div>
+        <div class="lesion-row"><div class="lesion-dot" style="background:var(--rose)"></div><div><div class="lesion-name">Papule</div><div class="lesion-def">Small solid raised lesion ≤0.5 cm</div></div></div>
+        <div class="lesion-row"><div class="lesion-dot" style="background:var(--rose)"></div><div><div class="lesion-name">Plaque</div><div class="lesion-def">Raised, flat-topped lesion &gt;1 cm; e.g. psoriasis</div></div></div>
+        <div class="lesion-row"><div class="lesion-dot" style="background:var(--rose)"></div><div><div class="lesion-name">Wheal</div><div class="lesion-def">Transient raised area with irregular border; e.g. hive (urticaria)</div></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title" style="color:var(--teal)">Primary lesions — fluid-filled</div>
+        <div class="lesion-row"><div class="lesion-dot" style="background:var(--teal)"></div><div><div class="lesion-name">Vesicle</div><div class="lesion-def">Small blister ≤0.5 cm containing clear fluid (e.g. chickenpox)</div></div></div>
+        <div class="lesion-row"><div class="lesion-dot" style="background:var(--teal)"></div><div><div class="lesion-name">Bulla</div><div class="lesion-def">Large blister &gt;0.5 cm; pl. bullae (e.g. second-degree burn)</div></div></div>
+        <div class="lesion-row"><div class="lesion-dot" style="background:var(--teal)"></div><div><div class="lesion-name">Pustule</div><div class="lesion-def">Blister filled with pus (e.g. acne, impetigo)</div></div></div>
+        <div class="lesion-row"><div class="lesion-dot" style="background:var(--teal)"></div><div><div class="lesion-name">Telangiectasia</div><div class="lesion-def">Permanently dilated superficial blood vessels; visible "spider veins"</div></div></div>
+        <div class="lesion-row"><div class="lesion-dot" style="background:var(--violet)"></div><div><div class="lesion-name">Petechia</div><div class="lesion-def">Tiny pinpoint hemorrhage ≤2 mm; pl. petechiae</div></div></div>
+        <div class="lesion-row"><div class="lesion-dot" style="background:var(--violet)"></div><div><div class="lesion-name">Ecchymosis</div><div class="lesion-def">Bruise; flat hemorrhagic area &gt;3 mm (non-blanching)</div></div></div>
+        <div class="lesion-row"><div class="lesion-dot" style="background:var(--violet)"></div><div><div class="lesion-name">Purpura</div><div class="lesion-def">Group of petechiae; larger hemorrhagic patches</div></div></div>
+        <div class="card-title" style="color:var(--orange);margin-top:1rem">Secondary lesions</div>
+        <div class="lesion-row"><div class="lesion-dot" style="background:var(--orange)"></div><div><div class="lesion-name">Atrophy</div><div class="lesion-def">Thinning and wasting of skin</div></div></div>
+        <div class="lesion-row"><div class="lesion-dot" style="background:var(--orange)"></div><div><div class="lesion-name">Cicatrix</div><div class="lesion-def">Scar tissue from healed wound</div></div></div>
+        <div class="lesion-row"><div class="lesion-dot" style="background:var(--orange)"></div><div><div class="lesion-name">Keloid</div><div class="lesion-def">Overgrown, raised scar extending beyond original wound margins</div></div></div>
+        <div class="lesion-row"><div class="lesion-dot" style="background:var(--orange)"></div><div><div class="lesion-name">Eschar</div><div class="lesion-def">Dead tissue/thick crust; often from burn or necrosis</div></div></div>
+        <div class="lesion-row"><div class="lesion-dot" style="background:var(--orange)"></div><div><div class="lesion-name">Fissure</div><div class="lesion-def">Linear crack in the skin extending into dermis</div></div></div>
+        <div class="lesion-row"><div class="lesion-dot" style="background:var(--orange)"></div><div><div class="lesion-name">Ulcer</div><div class="lesion-def">Open sore with tissue loss extending below epidermis</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== PATHOLOGY ===== -->
+  <div class="section" id="sec-pathology">
+    <div class="sub-tabs" id="path-sub-tabs">
+      <button class="sub-tab active" onclick="showPath('dermatitis',this)">Dermatitis &amp; bacterial</button>
+      <button class="sub-tab" onclick="showPath('fungal',this)">Fungal &amp; parasitic</button>
+      <button class="sub-tab" onclick="showPath('viral',this)">Viral</button>
+      <button class="sub-tab" onclick="showPath('hair',this)">Hair &amp; sebaceous</button>
+      <button class="sub-tab" onclick="showPath('nails',this)">Nails</button>
+      <button class="sub-tab" onclick="showPath('pigment',this)">Pigmentation &amp; other</button>
+      <button class="sub-tab" onclick="showPath('neoplasm',this)">Neoplasms</button>
+    </div>
+    <div class="card">
+      <div class="vocab-tab-panel active" id="pt-dermatitis">
+        <div class="path-item"><div><div class="path-name">Atopic dermatitis</div><div class="path-def">Chronic inflammatory skin condition; associated with allergies and asthma; itchy, red patches</div></div></div>
+        <div class="path-item"><div><div class="path-name">Contact dermatitis</div><div class="path-def">Skin inflammation from direct contact with irritant or allergen (e.g. poison ivy, latex)</div></div></div>
+        <div class="path-item"><div><div class="path-name">Eczema</div><div class="path-def">General term for inflammatory skin conditions with redness, itching, and scaling; often used interchangeably with atopic dermatitis</div></div></div>
+        <div class="path-item"><div><div class="path-name">Seborrheic dermatitis</div><div class="path-def">Greasy, scaly patches on oily areas (scalp, face); "cradle cap" in infants</div></div></div>
+        <div class="path-item"><div><div class="path-name">Cellulitis</div><div class="path-def">Bacterial infection of skin and subcutaneous tissue; red, warm, swollen area that spreads</div></div></div>
+        <div class="path-item"><div><div class="path-name">Folliculitis</div><div class="path-def">Inflammation/infection of hair follicles (follicul/o + -itis); red bumps around follicles</div></div></div>
+        <div class="path-item"><div><div class="path-name">Furuncle</div><div class="path-def">Boil; deep infection of hair follicle forming a pus-filled nodule</div></div></div>
+        <div class="path-item"><div><div class="path-name">Carbuncle</div><div class="path-def">Cluster of furuncles forming a deeper, interconnected abscess</div></div></div>
+        <div class="path-item"><div><div class="path-name">Impetigo</div><div class="path-def">Highly contagious superficial bacterial infection; honey-colored crusted lesions; common in children</div></div></div>
+        <div class="path-item"><div><div class="path-name">Pilonidal cyst</div><div class="path-def">Cyst containing hair at the base of the spine (sacrococcygeal area)</div></div></div>
+        <div class="path-item"><div><div class="path-name">Pruritus</div><div class="path-def">Intense itching; a symptom, not a diagnosis</div></div></div>
+      </div>
+      <div class="vocab-tab-panel" id="pt-fungal">
+        <div class="path-item"><div><div class="path-name">Candidiasis</div><div class="path-def">Yeast infection caused by Candida; affects skin, mouth (thrush), or genitals</div></div></div>
+        <div class="path-item"><div><div class="path-name">Dermatomycosis</div><div class="path-def">Fungal infection of the skin (derm/o + myc/o = fungus + -osis)</div></div></div>
+        <div class="path-item"><div><div class="path-name">Tinea capitis</div><div class="path-def">Ringworm of the scalp (capit/o = head); causes hair loss patches</div></div></div>
+        <div class="path-item"><div><div class="path-name">Tinea corporis</div><div class="path-def">Ringworm of the body; circular scaly ring-shaped lesion</div></div></div>
+        <div class="path-item"><div><div class="path-name">Tinea cruris</div><div class="path-def">Jock itch; fungal infection of the groin (crur/o = leg/groin)</div></div></div>
+        <div class="path-item"><div><div class="path-name">Tinea pedis</div><div class="path-def">Athlete's foot; fungal infection of the foot (ped/o = foot)</div></div></div>
+        <div class="path-item"><div><div class="path-name">Pediculosis</div><div class="path-def">Infestation with lice (pedicul/i); head, body, or pubic lice</div></div></div>
+        <div class="path-item"><div><div class="path-name">Scabies</div><div class="path-def">Infestation by Sarcoptes scabiei mite; causes intense itching, burrow tracks</div></div></div>
+      </div>
+      <div class="vocab-tab-panel" id="pt-viral">
+        <div class="path-item"><div><div class="path-name">Exanthematous diseases</div><div class="path-def">Viral diseases with widespread skin rash; e.g. measles, chickenpox, rubella</div></div></div>
+        <div class="path-item"><div><div class="path-name">Herpes simplex virus type 1 (HSV-1)</div><div class="path-def">Oral herpes; "cold sores" or "fever blisters" around the mouth</div></div></div>
+        <div class="path-item"><div><div class="path-name">Herpes simplex virus type 2 (HSV-2)</div><div class="path-def">Genital herpes; sexually transmitted; recurrent painful lesions</div></div></div>
+        <div class="path-item"><div><div class="path-name">Herpes zoster</div><div class="path-def">Shingles; reactivation of varicella-zoster virus; painful unilateral vesicular rash along dermatomal distribution</div></div></div>
+        <div class="path-item"><div><div class="path-name">Verruca</div><div class="path-def">Wart; benign skin growth caused by human papillomavirus (HPV); pl. verrucae</div></div></div>
+      </div>
+      <div class="vocab-tab-panel" id="pt-hair">
+        <div class="path-item"><div><div class="path-name">Acne vulgaris</div><div class="path-def">Common skin condition with comedones, papules, pustules from blocked sebaceous glands</div></div></div>
+        <div class="path-item"><div><div class="path-name">Comedones</div><div class="path-def">Clogged hair follicles; open (blackheads) or closed (whiteheads); pl. of comedo</div></div></div>
+        <div class="path-item"><div><div class="path-name">Alopecia</div><div class="path-def">Hair loss; can be from disease, stress, genetics, or treatment (e.g. chemotherapy)</div></div></div>
+        <div class="path-item"><div><div class="path-name">Hypertrichosis</div><div class="path-def">Excessive hair growth (hyper- + trich/o); beyond normal distribution for age/sex</div></div></div>
+        <div class="path-item"><div><div class="path-name">Keratinous cyst</div><div class="path-def">Cyst containing keratin; sebaceous or epidermal inclusion cyst</div></div></div>
+        <div class="path-item"><div><div class="path-name">Milia</div><div class="path-def">Tiny white keratin-filled cysts; common in newborns; pl. of milium</div></div></div>
+        <div class="path-item"><div><div class="path-name">Seborrhea</div><div class="path-def">Excessive sebum production (seb/o + -rrhea = flow); oily skin</div></div></div>
+        <div class="path-item"><div><div class="path-name">Psoriasis</div><div class="path-def">Chronic autoimmune scaling papular disease; thick, silvery plaques on skin</div></div></div>
+        <div class="path-item"><div><div class="path-name">Anhidrosis</div><div class="path-def">Absence of sweating (an- + hidr/o); inability to sweat normally</div></div></div>
+        <div class="path-item"><div><div class="path-name">Hyperhidrosis</div><div class="path-def">Excessive sweating (hyper- + hidr/o)</div></div></div>
+        <div class="path-item"><div><div class="path-name">Hidradenitis</div><div class="path-def">Inflammation of sweat glands (hidraden/o + -itis)</div></div></div>
+      </div>
+      <div class="vocab-tab-panel" id="pt-nails">
+        <div class="path-item"><div><div class="path-name">Onychia</div><div class="path-def">Inflammation of the nail (onych/o + -ia)</div></div></div>
+        <div class="path-item"><div><div class="path-name">Onychocryptosis</div><div class="path-def">Ingrown nail (onych/o + crypt- + -osis); nail edge grows into surrounding skin</div></div></div>
+        <div class="path-item"><div><div class="path-name">Onycholysis</div><div class="path-def">Separation of nail from nail bed (-lysis = loosening)</div></div></div>
+        <div class="path-item"><div><div class="path-name">Onychomalacia</div><div class="path-def">Softening of the nails (-malacia)</div></div></div>
+        <div class="path-item"><div><div class="path-name">Onychomycosis</div><div class="path-def">Fungal infection of the nail (onych/o + myc/o + -osis); thickened, discolored nails</div></div></div>
+        <div class="path-item"><div><div class="path-name">Paronychia</div><div class="path-def">Infection of the skin beside the nail (par- = beside + onych/o); red, swollen nail fold</div></div></div>
+        <div class="path-item"><div><div class="path-name">Subungual</div><div class="path-def">Pertaining to under the nail (sub- + ungu/o); e.g. subungual hematoma</div></div></div>
+      </div>
+      <div class="vocab-tab-panel" id="pt-pigment">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gray-400);margin-bottom:8px">Pigmentation disorders</div>
+        <div class="path-item"><div><div class="path-name">Albinism</div><div class="path-def">Absence of melanin pigment; genetic condition affecting skin, hair, and eyes</div></div></div>
+        <div class="path-item"><div><div class="path-name">Vitiligo</div><div class="path-def">Autoimmune loss of melanocytes causing irregular white patches on skin</div></div></div>
+        <div class="path-item"><div><div class="path-name">Dyschromia</div><div class="path-def">Abnormal skin pigmentation (dys- = abnormal + chrom/o = color)</div></div></div>
+        <div class="path-item"><div><div class="path-name">Hyperchromia / Hypochromia</div><div class="path-def">Excessive (hyper-) or decreased (hypo-) skin pigmentation</div></div></div>
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gray-400);margin:12px 0 8px">Cornification &amp; pressure injuries</div>
+        <div class="path-item"><div><div class="path-name">Callus</div><div class="path-def">Thickened skin from repeated friction or pressure; diffuse area</div></div></div>
+        <div class="path-item"><div><div class="path-name">Corn (clavus)</div><div class="path-def">Localized thickening with central hard core; from pressure on toes</div></div></div>
+        <div class="path-item"><div><div class="path-name">Decubitus ulcer</div><div class="path-def">Pressure sore / bedsore; tissue breakdown from prolonged pressure on bony prominences</div></div></div>
+        <div class="path-item"><div><div class="path-name">Ichthyosis</div><div class="path-def">Abnormal fish-like scaling of the skin (ichthy/o = fish); hereditary</div></div></div>
+        <div class="path-item"><div><div class="path-name">Xeroderma</div><div class="path-def">Abnormally dry skin (xer/o = dry + derm/o)</div></div></div>
+      </div>
+      <div class="vocab-tab-panel" id="pt-neoplasm">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gray-400);margin-bottom:8px">Benign growths</div>
+        <div class="path-item"><div><div class="path-name">Nevus</div><div class="path-def">Mole; benign pigmented lesion; pl. nevi. Dysplastic nevi have irregular features</div></div></div>
+        <div class="path-item"><div><div class="path-name">Angioma / Hemangioma</div><div class="path-def">Benign vascular tumor; "strawberry mark"; hemangioma = blood vessel tumor</div></div></div>
+        <div class="path-item"><div><div class="path-name">Dermatofibroma</div><div class="path-def">Benign fibrous nodule in the dermis; firm, slightly raised, brownish</div></div></div>
+        <div class="path-item"><div><div class="path-name">Lipoma</div><div class="path-def">Benign fatty tumor in subcutaneous tissue (lip/o = fat)</div></div></div>
+        <div class="path-item"><div><div class="path-name">Seborrheic keratosis</div><div class="path-def">Benign waxy, "stuck-on" brown growths; common in older adults</div></div></div>
+        <div class="path-item"><div><div class="path-name">Skin tag (acrochordon)</div><div class="path-def">Soft, benign pedunculated skin overgrowth; common on neck and axillae</div></div></div>
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gray-400);margin:12px 0 8px">Malignant neoplasms</div>
+        <div class="path-item"><div><div class="path-name">Basal cell carcinoma (BCC)</div><div class="path-def">Most common skin cancer; arises from stratum germinativum; slow-growing, rarely metastasizes</div></div></div>
+        <div class="path-item"><div><div class="path-name">Squamous cell carcinoma (SCC)</div><div class="path-def">Second most common; arises from keratinocytes; more aggressive than BCC; can metastasize</div></div></div>
+        <div class="path-item"><div><div class="path-name">Malignant melanoma</div><div class="path-def">Most dangerous; arises from melanocytes (melan/o); highly metastatic; use ABCDE rule</div></div></div>
+        <div class="path-item"><div><div class="path-name">Kaposi sarcoma (KS)</div><div class="path-def">Malignant vascular tumor; associated with HIV/AIDS; purple/brown lesions on skin</div></div></div>
+        <div class="abcde-grid">
+          <div class="abcde-cell"><div class="abcde-letter">A</div><div class="abcde-word">Asymmetry</div><div class="abcde-desc">Two halves don't match</div></div>
+          <div class="abcde-cell"><div class="abcde-letter">B</div><div class="abcde-word">Border</div><div class="abcde-desc">Irregular edges</div></div>
+          <div class="abcde-cell"><div class="abcde-letter">C</div><div class="abcde-word">Color</div><div class="abcde-desc">Multiple shades</div></div>
+          <div class="abcde-cell"><div class="abcde-letter">D</div><div class="abcde-word">Diameter</div><div class="abcde-desc">&gt;6 mm</div></div>
+          <div class="abcde-cell"><div class="abcde-letter">E</div><div class="abcde-word">Evolution</div><div class="abcde-desc">Changing over time</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== BURNS ===== -->
+  <div class="section" id="sec-burns">
+    <div class="card">
+      <div class="card-title" style="color:var(--orange)">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+        Burn degrees — depth classification
+      </div>
+      <div class="burn-row" style="background:#FFFBEB;border-color:#FDE68A"><div class="burn-deg" style="color:var(--gold-dark)">1st degree</div><div><div class="burn-name">Superficial thickness</div><div class="burn-desc">Epidermis only; red, dry, painful; e.g. mild sunburn. No blistering.</div></div></div>
+      <div class="burn-row" style="background:#FFF7ED;border-color:#FED7AA"><div class="burn-deg" style="color:var(--orange-dark)">2nd degree<br><em style="font-size:11px;font-weight:400">superficial partial</em></div><div><div class="burn-name">Superficial partial thickness</div><div class="burn-desc">Epidermis + upper dermis; red, moist, blistered, very painful.</div></div></div>
+      <div class="burn-row" style="background:#FFEDD5;border-color:#FB923C"><div class="burn-deg" style="color:var(--orange-dark)">2nd degree<br><em style="font-size:11px;font-weight:400">deep partial</em></div><div><div class="burn-name">Deep partial thickness</div><div class="burn-desc">Epidermis + deep dermis; pale/mottled, less painful (nerve damage begins).</div></div></div>
+      <div class="burn-row" style="background:#FEE2E2;border-color:#FCA5A5"><div class="burn-deg" style="color:#7F1D1D">3rd degree</div><div><div class="burn-name">Full thickness</div><div class="burn-desc">Entire skin destroyed; white/brown/black, leathery; painless (nerves destroyed); requires grafting.</div></div></div>
+      <div class="burn-row" style="background:#F1F5F9;border-color:var(--gray-200)"><div class="burn-deg" style="color:var(--slate-dark)">4th degree</div><div><div class="burn-name">Deep full thickness</div><div class="burn-desc">Extends through skin into underlying fat, muscle, and bone.</div></div></div>
+    </div>
+    <div class="two-col">
+      <div class="card">
+        <div class="card-title" style="color:var(--orange)">Rule of Nines — BSA estimation</div>
+        <div style="font-size:13px;color:var(--gray-600);line-height:1.9">
+          <strong style="color:var(--gray-900)">Head &amp; neck</strong> = 9%<br>
+          <strong style="color:var(--gray-900)">Each arm</strong> = 9% (×2 = 18%)<br>
+          <strong style="color:var(--gray-900)">Chest (anterior trunk)</strong> = 18%<br>
+          <strong style="color:var(--gray-900)">Back (posterior trunk)</strong> = 18%<br>
+          <strong style="color:var(--gray-900)">Each leg</strong> = 18% (×2 = 36%)<br>
+          <strong style="color:var(--gray-900)">Perineum</strong> = 1%
+        </div>
+        <div class="tip-box gold">Total = 100%. Used to estimate extent of burns for fluid replacement calculations.</div>
+      </div>
+      <div class="card">
+        <div class="card-title" style="color:var(--teal)">Eschar &amp; escharotomy</div>
+        <div style="font-size:13px;color:var(--gray-600);line-height:1.7">
+          <strong style="color:var(--gray-900)">Eschar</strong> — thick, leathery dead tissue that forms over a full-thickness burn<br><br>
+          <strong style="color:var(--gray-900)">Escharotomy</strong> — surgical incision through eschar to relieve pressure and restore circulation (eschar + -tomy = incision)
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== PROCEDURES ===== -->
+  <div class="section" id="sec-procedures">
+    <div class="two-col">
+      <div class="card">
+        <div class="card-title" style="color:var(--teal)">
+          <svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V8l-5-5zM9 3v5h11"/></svg>
+          Diagnostic procedures
+        </div>
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gray-400);margin-bottom:6px">Biopsy types</div>
+        <div class="path-item"><div><div class="path-name">Excisional biopsy</div><div class="path-def">Entire lesion removed and examined</div></div></div>
+        <div class="path-item"><div><div class="path-name">Incisional biopsy</div><div class="path-def">Portion of lesion removed for examination</div></div></div>
+        <div class="path-item"><div><div class="path-name">Needle aspiration</div><div class="path-def">Fluid withdrawn from lesion via needle</div></div></div>
+        <div class="path-item"><div><div class="path-name">Punch biopsy</div><div class="path-def">Circular tool removes full-thickness skin core</div></div></div>
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gray-400);margin:10px 0 6px">Lab tests</div>
+        <div class="path-item"><div><div class="path-name">Tzanck test</div><div class="path-def">Smear from vesicle base to detect herpes virus</div></div></div>
+        <div class="path-item"><div><div class="path-name">Wood's light examination</div><div class="path-def">UV light exam; fungal infections fluoresce</div></div></div>
+        <div class="path-item"><div><div class="path-name">TB skin tests</div><div class="path-def">Intradermal (ID) injection; Mantoux/PPD test</div></div></div>
+        <div class="path-item"><div><div class="path-name">Bacterial, fungal, viral cultures</div><div class="path-def">Lab growth of organisms from swab samples</div></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title" style="color:var(--rose)">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Therapeutic procedures
+        </div>
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gray-400);margin-bottom:6px">Tissue removal</div>
+        <div class="path-item"><div><div class="path-name">Curettage</div><div class="path-def">Scraping of tissue with a curette instrument</div></div></div>
+        <div class="path-item"><div><div class="path-name">Débridement</div><div class="path-def">Removal of dead/damaged tissue to promote healing</div></div></div>
+        <div class="path-item"><div><div class="path-name">Cauterization</div><div class="path-def">Destruction of tissue using heat, electric current, or chemicals</div></div></div>
+        <div class="path-item"><div><div class="path-name">Cryosurgery</div><div class="path-def">Tissue destruction using extreme cold (liquid nitrogen)</div></div></div>
+        <div class="path-item"><div><div class="path-name">Escharotomy</div><div class="path-def">Incision through burn eschar to relieve pressure</div></div></div>
+        <div class="path-item"><div><div class="path-name">Mohs surgery</div><div class="path-def">Layer-by-layer removal of skin cancer with microscopic margin checking</div></div></div>
+        <div class="path-item"><div><div class="path-name">I&amp;D (Incision &amp; drainage)</div><div class="path-def">Surgical opening and draining of abscess</div></div></div>
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gray-400);margin:10px 0 6px">Grafting</div>
+        <div class="path-item"><div><div class="path-name">Autograft</div><div class="path-def">Patient's own skin used as graft (auto- = self)</div></div></div>
+        <div class="path-item"><div><div class="path-name">Allograft</div><div class="path-def">Donor skin from same species (allo- = other)</div></div></div>
+        <div class="path-item"><div><div class="path-name">Xenograft</div><div class="path-def">Skin from different species; e.g. pig skin (xen/o = foreign)</div></div></div>
+        <div class="path-item"><div><div class="path-name">STSG / Full-thickness graft</div><div class="path-def">Split-thickness includes epidermis + part of dermis; full-thickness includes all layers</div></div></div>
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gray-400);margin:10px 0 6px">Cosmetic procedures</div>
+        <div class="path-item"><div><div class="path-name">Rhytidectomy</div><div class="path-def">Face-lift; excision of wrinkles (rhytid/o + -ectomy)</div></div></div>
+        <div class="path-item"><div><div class="path-name">Dermatoplasty</div><div class="path-def">Surgical repair of skin (dermat/o + -plasty)</div></div></div>
+        <div class="path-item"><div><div class="path-name">Dermabrasion</div><div class="path-def">Mechanical sanding of skin surface to remove scars or wrinkles</div></div></div>
+        <div class="path-item"><div><div class="path-name">Blepharoplasty</div><div class="path-def">Surgical repair of eyelid (blephar/o = eyelid + -plasty)</div></div></div>
+        <div class="path-item"><div><div class="path-name">Liposuction / Lipectomy</div><div class="path-def">Removal of fat (lip/o); suction-assisted or surgical excision</div></div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title" style="color:var(--violet)">Pharmacology — routes of administration &amp; drug classes</div>
+      <div class="two-col">
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gray-400);margin-bottom:6px">Routes of administration</div>
+          <div style="font-size:13px;color:var(--gray-600);line-height:1.8">
+            <strong style="color:var(--gray-900)">Hypodermic (H)</strong> — under skin<br>
+            <strong style="color:var(--gray-900)">Intradermal (ID)</strong> — within skin layers<br>
+            <strong style="color:var(--gray-900)">Subcutaneous (SC/SQ)</strong> — under dermis, above muscle<br>
+            <strong style="color:var(--gray-900)">Topical</strong> — applied directly to skin surface<br>
+            <strong style="color:var(--gray-900)">Transdermal (TTS)</strong> — absorbed through skin; e.g. patches
+          </div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gray-400);margin-bottom:6px">Drug classes</div>
+          <div style="display:flex;flex-wrap:wrap;gap:5px">
+            <span class="badge badge-teal">Antibacterials</span>
+            <span class="badge badge-violet">Antifungals</span>
+            <span class="badge badge-gold">Antivirals</span>
+            <span class="badge badge-rose">Antihistamines</span>
+            <span class="badge badge-slate">Anti-inflammatories</span>
+            <span class="badge badge-orange">Keratolytics</span>
+            <span class="badge badge-teal">Pediculicides</span>
+            <span class="badge badge-violet">Scabicides</span>
+            <span class="badge badge-gold">Retinoids</span>
+            <span class="badge badge-rose">Emollients</span>
+            <span class="badge badge-slate">Antipsoriatics</span>
+            <span class="badge badge-orange">Immunomodulators</span>
+            <span class="badge badge-teal">Antiseptics</span>
+            <span class="badge badge-violet">Anesthetics</span>
+          </div>
+        </div>
+      </div>
+      <div class="tip-box teal" style="margin-top:10px"><strong>Keratolytic</strong> (kerat/o + -lytic) — agent that breaks down or softens keratin; used for warts, calluses, psoriasis.<br><strong>Pediculicide</strong> (pedicul/i + -cide = kill) — kills lice. <strong>Scabicide</strong> — kills scabies mites.</div>
+    </div>
+  </div>
+
+  <!-- ===== VOCAB ===== -->
+  <div class="section" id="sec-vocab">
+    <div class="sub-tabs" id="vocab-sub-tabs">
+      <button class="sub-tab active" onclick="showVocab('combining',this)">Combining forms</button>
+      <button class="sub-tab" onclick="showVocab('prefixes',this)">Prefixes</button>
+      <button class="sub-tab" onclick="showVocab('suffixes',this)">Suffixes</button>
+      <button class="sub-tab" onclick="showVocab('keyterms',this)">Key terms decoded</button>
+    </div>
+    <div class="card">
+      <div class="vocab-tab-panel active" id="vt-combining">
+        <table class="vocab-table"><thead><tr><th>Combining form</th><th>Meaning</th><th>Example</th></tr></thead><tbody>
+          <tr><td><code>adip/o</code></td><td>fat (adipose)</td><td>adipose tissue</td></tr>
+          <tr><td><code>bas/o</code></td><td>base, bottom layer</td><td>basal layer (stratum germinativum)</td></tr>
+          <tr><td><code>corne/o</code></td><td>horny, cornified</td><td>stratum corneum</td></tr>
+          <tr><td><code>cutane/o</code></td><td>skin</td><td>subcutaneous, transdermal</td></tr>
+          <tr><td><code>derm/o, dermat/o</code></td><td>skin</td><td>dermatitis, dermatoplasty</td></tr>
+          <tr><td><code>follicul/o</code></td><td>follicle</td><td>folliculitis</td></tr>
+          <tr><td><code>hidr/o</code></td><td>sweat</td><td>anhidrosis, hyperhidrosis</td></tr>
+          <tr><td><code>hidraden/o</code></td><td>sweat gland</td><td>hidradenitis</td></tr>
+          <tr><td><code>kerat/o</code></td><td>keratin, hard</td><td>keratolytic, keratosis</td></tr>
+          <tr><td><code>lip/o</code></td><td>fat</td><td>lipoma, liposuction</td></tr>
+          <tr><td><code>melan/o</code></td><td>black, dark (melanin)</td><td>melanoma, melanocyte</td></tr>
+          <tr><td><code>myc/o</code></td><td>fungus</td><td>onychomycosis, dermatomycosis</td></tr>
+          <tr><td><code>onych/o</code></td><td>nail</td><td>onychocryptosis, onychomycosis</td></tr>
+          <tr><td><code>papill/o</code></td><td>nipple-like projection</td><td>papilla (hair base)</td></tr>
+          <tr><td><code>pedicul/i</code></td><td>louse (lice)</td><td>pediculosis, pediculicide</td></tr>
+          <tr><td><code>pil/o</code></td><td>hair</td><td>pilonidal cyst</td></tr>
+          <tr><td><code>rhytid/o</code></td><td>wrinkle</td><td>rhytidectomy</td></tr>
+          <tr><td><code>seb/o, sebac/o</code></td><td>sebum (oil)</td><td>seborrhea, sebaceous</td></tr>
+          <tr><td><code>squam/o</code></td><td>scale, scaly</td><td>squamous epithelium</td></tr>
+          <tr><td><code>sudor/i</code></td><td>sweat</td><td>sudoriferous glands</td></tr>
+          <tr><td><code>trich/o</code></td><td>hair</td><td>hypertrichosis</td></tr>
+          <tr><td><code>ungu/o</code></td><td>nail</td><td>subungual</td></tr>
+          <tr><td><code>xer/o</code></td><td>dry</td><td>xeroderma</td></tr>
+        </tbody></table>
+      </div>
+      <div class="vocab-tab-panel" id="vt-prefixes">
+        <table class="vocab-table"><thead><tr><th>Prefix</th><th>Meaning</th><th>Example</th></tr></thead><tbody>
+          <tr><td><code>an-</code></td><td>without, absence of</td><td>anhidrosis (no sweating)</td></tr>
+          <tr><td><code>crypt-</code></td><td>hidden</td><td>onychocryptosis (hidden/ingrown nail)</td></tr>
+          <tr><td><code>epi-</code></td><td>upon, over</td><td>epidermis (upon the dermis)</td></tr>
+          <tr><td><code>hyper-</code></td><td>excessive, above normal</td><td>hyperhidrosis, hypertrichosis</td></tr>
+          <tr><td><code>intra-</code></td><td>within</td><td>intradermal (within the skin)</td></tr>
+          <tr><td><code>par-</code></td><td>beside, near</td><td>paronychia (beside the nail)</td></tr>
+          <tr><td><code>sub-</code></td><td>below, under</td><td>subcutaneous, subungual</td></tr>
+          <tr><td><code>trans-</code></td><td>through, across</td><td>transdermal (through the skin)</td></tr>
+        </tbody></table>
+      </div>
+      <div class="vocab-tab-panel" id="vt-suffixes">
+        <table class="vocab-table"><thead><tr><th>Suffix</th><th>Meaning</th><th>Example</th></tr></thead><tbody>
+          <tr><td><code>-cide</code></td><td>killing agent</td><td>pediculicide, scabicide</td></tr>
+          <tr><td><code>-ectomy</code></td><td>surgical removal</td><td>rhytidectomy, lipectomy</td></tr>
+          <tr><td><code>-itis</code></td><td>inflammation</td><td>folliculitis, dermatitis</td></tr>
+          <tr><td><code>-lytic</code></td><td>breaking down</td><td>keratolytic</td></tr>
+          <tr><td><code>-oma</code></td><td>tumor, mass</td><td>melanoma, lipoma, hematoma</td></tr>
+          <tr><td><code>-osis</code></td><td>condition, abnormal state</td><td>onychocryptosis, onychomycosis</td></tr>
+          <tr><td><code>-plasty</code></td><td>surgical repair</td><td>dermatoplasty, blepharoplasty</td></tr>
+        </tbody></table>
+      </div>
+      <div class="vocab-tab-panel" id="vt-keyterms">
+        <table class="vocab-table"><thead><tr><th>Term</th><th>Word parts</th><th>Meaning</th></tr></thead><tbody>
+          <tr><td>Anhidrosis</td><td>an- + hidr/o + -osis</td><td>Condition of no sweating</td></tr>
+          <tr><td>Folliculitis</td><td>follicul/o + -itis</td><td>Inflammation of hair follicles</td></tr>
+          <tr><td>Hypertrichosis</td><td>hyper- + trich/o + -osis</td><td>Condition of excessive hair</td></tr>
+          <tr><td>Intradermal</td><td>intra- + derm/o + -al</td><td>Pertaining to within the skin</td></tr>
+          <tr><td>Keratolytic</td><td>kerat/o + -lytic</td><td>Agent that breaks down keratin</td></tr>
+          <tr><td>Melanoma</td><td>melan/o + -oma</td><td>Tumor of melanocytes (dark cells)</td></tr>
+          <tr><td>Onychocryptosis</td><td>onych/o + crypt- + -osis</td><td>Condition of hidden/ingrown nail</td></tr>
+          <tr><td>Onychomycosis</td><td>onych/o + myc/o + -osis</td><td>Condition of fungal nail infection</td></tr>
+          <tr><td>Paronychia</td><td>par- + onych/o + -ia</td><td>Condition beside the nail</td></tr>
+          <tr><td>Pediculicide</td><td>pedicul/i + -cide</td><td>Agent that kills lice</td></tr>
+          <tr><td>Rhytidectomy</td><td>rhytid/o + -ectomy</td><td>Surgical removal of wrinkles (face-lift)</td></tr>
+          <tr><td>Seborrhea</td><td>seb/o + -rrhea</td><td>Excessive flow of sebum</td></tr>
+          <tr><td>Subcutaneous</td><td>sub- + cutane/o + -ous</td><td>Pertaining to under the skin</td></tr>
+          <tr><td>Subungual</td><td>sub- + ungu/o + -al</td><td>Pertaining to under the nail</td></tr>
+          <tr><td>Transdermal</td><td>trans- + derm/o + -al</td><td>Pertaining to through the skin</td></tr>
+          <tr><td>Dermatoplasty</td><td>dermat/o + -plasty</td><td>Surgical repair of the skin</td></tr>
+        </tbody></table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FLASHCARDS ===== -->
+  <div class="section" id="sec-flashcards">
+    <button class="fc-shuffle" onclick="shuffleCards()">⇄ Shuffle cards</button>
+    <div class="fc-nav">
+      <button class="fc-btn" onclick="prevCard()">&#8592;</button>
+      <div class="fc-counter" id="fc-counter">1 / 24</div>
+      <button class="fc-btn" onclick="nextCard()">&#8594;</button>
+    </div>
+    <div class="flip-wrap" onclick="flipCard()">
+      <div class="flip-inner" id="fc-inner">
+        <div class="flip-front"><div class="flip-term" id="fc-term">derm/o</div><div class="flip-hint">click to reveal</div></div>
+        <div class="flip-back"><div class="flip-def" id="fc-def">skin</div><div class="flip-ex" id="fc-ex">dermatitis, dermatoplasty</div></div>
+      </div>
+    </div>
+    <div style="font-size:12px;color:var(--gray-400);text-align:center;margin-top:10px">Click to flip · Arrows to navigate</div>
+  </div>
+
+  <!-- ===== QUIZ ===== -->
+  <div class="section" id="sec-quiz">
+    <div class="card" id="quiz-card">
+      <div class="quiz-progress" id="quiz-dots"></div>
+      <div class="quiz-q-text" id="quiz-q"></div>
+      <div class="quiz-opts" id="quiz-opts"></div>
+      <div id="quiz-feedback" style="display:none"></div>
+      <button class="quiz-next-btn" id="quiz-next" onclick="nextQuestion()" style="display:none">Next question →</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const SECTIONS = ['anatomy','lesions','pathology','burns','procedures','vocab','flashcards','quiz'];
+const visited = new Set(['anatomy']);
+function showSection(id, btn){
+  SECTIONS.forEach(s=>document.getElementById('sec-'+s).classList.remove('active'));
+  document.querySelectorAll('.nav-row .tab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('sec-'+id).classList.add('active');
+  btn.classList.add('active');
+  visited.add(id);
+  const pct=Math.round((visited.size/SECTIONS.length)*100);
+  document.getElementById('prog-fill').style.width=pct+'%';
+  document.getElementById('prog-label').textContent=pct+'%';
+  if(id==='flashcards') renderCard();
+  if(id==='quiz' && !quizStarted) startQuiz();
+}
+function showPath(id, btn){
+  document.querySelectorAll('[id^="pt-"]').forEach(el=>el.classList.remove('active'));
+  document.querySelectorAll('#path-sub-tabs .sub-tab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('pt-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+function showVocab(id, btn){
+  document.querySelectorAll('[id^="vt-"]').forEach(el=>el.classList.remove('active'));
+  document.querySelectorAll('#vocab-sub-tabs .sub-tab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('vt-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+
+let allCards = [
+  {term:'derm/o, dermat/o', def:'skin', ex:'dermatitis, dermatoplasty'},
+  {term:'cutane/o', def:'skin', ex:'subcutaneous, transdermal'},
+  {term:'melan/o', def:'black, dark (melanin)', ex:'melanoma, melanocyte'},
+  {term:'kerat/o', def:'keratin, hard', ex:'keratolytic, keratosis'},
+  {term:'trich/o', def:'hair', ex:'hypertrichosis'},
+  {term:'follicul/o', def:'follicle', ex:'folliculitis'},
+  {term:'hidr/o', def:'sweat', ex:'anhidrosis, hyperhidrosis'},
+  {term:'seb/o', def:'sebum (oil)', ex:'seborrhea, sebaceous gland'},
+  {term:'onych/o', def:'nail', ex:'onychomycosis, paronychia'},
+  {term:'ungu/o', def:'nail', ex:'subungual hematoma'},
+  {term:'myc/o', def:'fungus', ex:'onychomycosis, dermatomycosis'},
+  {term:'rhytid/o', def:'wrinkle', ex:'rhytidectomy (face-lift)'},
+  {term:'pedicul/i', def:'louse (lice)', ex:'pediculosis, pediculicide'},
+  {term:'-cide', def:'killing agent', ex:'pediculicide, scabicide'},
+  {term:'-lytic', def:'breaking down', ex:'keratolytic'},
+  {term:'epi-', def:'upon, over', ex:'epidermis'},
+  {term:'sub-', def:'below, under', ex:'subcutaneous, subungual'},
+  {term:'trans-', def:'through, across', ex:'transdermal patch'},
+  {term:'intra-', def:'within', ex:'intradermal injection'},
+  {term:'an-', def:'without, absence of', ex:'anhidrosis'},
+  {term:'hyper-', def:'excessive', ex:'hyperhidrosis, hypertrichosis'},
+  {term:'par-', def:'beside, near', ex:'paronychia'},
+  {term:'crypt-', def:'hidden', ex:'onychocryptosis (ingrown nail)'},
+  {term:'xer/o', def:'dry', ex:'xeroderma'},
+];
+let fcIdx=0, fcFlipped=false;
+function renderCard(){
+  const c=allCards[fcIdx];
+  document.getElementById('fc-term').textContent=c.term;
+  document.getElementById('fc-def').textContent=c.def;
+  document.getElementById('fc-ex').textContent=c.ex;
+  document.getElementById('fc-counter').textContent=(fcIdx+1)+' / '+allCards.length;
+  document.getElementById('fc-inner').classList.remove('flipped'); fcFlipped=false;
+}
+function flipCard(){ fcFlipped=!fcFlipped; document.getElementById('fc-inner').classList.toggle('flipped',fcFlipped); }
+function nextCard(){ fcIdx=(fcIdx+1)%allCards.length; renderCard(); }
+function prevCard(){ fcIdx=(fcIdx-1+allCards.length)%allCards.length; renderCard(); }
+function shuffleCards(){
+  for(let i=allCards.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [allCards[i],allCards[j]]=[allCards[j],allCards[i]]; }
+  fcIdx=0; renderCard();
+}
+
+const QUIZ = [
+  {q:'What does melan/o mean?', ans:'Black / dark (melanin)', opts:['Black / dark (melanin)','Skin','Hair','Fungus']},
+  {q:'Onychomycosis is:', ans:'Fungal infection of the nail', opts:['Ingrown nail','Fungal infection of the nail','Nail inflammation','Separation of nail from bed']},
+  {q:'Which layer of the skin contains sebaceous glands and hair follicles?', ans:'Dermis', opts:['Epidermis','Dermis','Hypodermis / subcutaneous layer','Stratum corneum']},
+  {q:'A vesicle differs from a bulla because:', ans:'Vesicle is ≤0.5 cm; bulla is >0.5 cm', opts:['Vesicle contains pus; bulla contains blood','Vesicle is ≤0.5 cm; bulla is >0.5 cm','Vesicle is a secondary lesion; bulla is primary','Vesicle is solid; bulla is fluid-filled']},
+  {q:'Transdermal means:', ans:'Through the skin', opts:['Within the skin','Under the skin','Through the skin','Upon the skin']},
+  {q:'Which skin cancer is MOST dangerous and metastatic?', ans:'Malignant melanoma', opts:['Basal cell carcinoma','Squamous cell carcinoma','Malignant melanoma','Kaposi sarcoma']},
+  {q:'A third-degree burn is also called:', ans:'Full thickness', opts:['Superficial thickness','Superficial partial thickness','Deep partial thickness','Full thickness']},
+  {q:'Paronychia (par- + onych/o) affects:', ans:'Skin beside or around the nail', opts:['Inside the nail bed','Skin beside or around the nail','The hair follicle','Under the nail']},
+  {q:'What is the Rule of Nines used for?', ans:'Estimating body surface area of burns', opts:['Classifying burn depth','Estimating body surface area of burns','Calculating drug dosage','Counting skin lesion types']},
+  {q:'Keratolytic agents work by:', ans:'Breaking down or softening keratin', opts:['Killing fungal organisms','Breaking down or softening keratin','Stimulating melanin production','Suppressing sweat production']},
+  {q:'Rhytidectomy involves:', ans:'Surgical removal of wrinkles (face-lift)', opts:['Skin grafting for burns','Surgical removal of wrinkles (face-lift)','Removal of a nail','Treatment of acne']},
+  {q:'Which combining form means "sweat"?', ans:'hidr/o', opts:['seb/o','hidr/o','trich/o','follicul/o']},
+];
+let qIdx=0, score=0, results=[], quizStarted=false;
+function startQuiz(){ quizStarted=true; qIdx=0; score=0; results=[]; renderQ(); }
+function renderQ(){
+  const q=QUIZ[qIdx];
+  document.getElementById('quiz-dots').innerHTML=QUIZ.map((_,i)=>`<div class="q-dot ${i<results.length?(results[i]?'pass':'fail'):''}" title="Q${i+1}"></div>`).join('');
+  document.getElementById('quiz-q').textContent=(qIdx+1)+'. '+q.q;
+  document.getElementById('quiz-opts').innerHTML=q.opts.map(o=>`<button class="q-opt" onclick="checkAns(this,'${o.replace(/'/g,"\\'")}','${q.ans.replace(/'/g,"\\'")}')">${o}</button>`).join('');
+  const fb=document.getElementById('quiz-feedback'); fb.style.display='none'; fb.className='q-feedback';
+  document.getElementById('quiz-next').style.display='none';
+}
+function checkAns(btn, chosen, correct){
+  document.querySelectorAll('.q-opt').forEach(b=>{ b.disabled=true; if(b.textContent===correct) b.classList.add('correct'); });
+  const isRight=chosen===correct;
+  if(isRight){ score++; btn.classList.add('correct'); } else btn.classList.add('wrong');
+  results.push(isRight);
+  document.getElementById('quiz-dots').innerHTML=QUIZ.map((_,i)=>`<div class="q-dot ${i<results.length?(results[i]?'pass':'fail'):''}" title="Q${i+1}"></div>`).join('');
+  const fb=document.getElementById('quiz-feedback');
+  fb.style.display='block'; fb.className='q-feedback '+(isRight?'correct':'wrong');
+  fb.textContent=isRight?'✓ Correct!':`✗ Correct answer: ${correct}`;
+  const nxt=document.getElementById('quiz-next');
+  nxt.style.display='inline-block';
+  nxt.textContent=qIdx===QUIZ.length-1?'See results':'Next question →';
+}
+function nextQuestion(){
+  qIdx++;
+  if(qIdx>=QUIZ.length){ showScore(); return; }
+  renderQ();
+}
+function showScore(){
+  const pct=Math.round((score/QUIZ.length)*100);
+  const cls=pct>=80?'great':pct>=60?'ok':'retry';
+  const msg=pct>=90?'Outstanding! Chapter 4 mastered.':pct>=70?'Good work! A little more review.':'Keep studying — check the lesions and pathology tabs.';
+  document.getElementById('quiz-card').innerHTML=`
+    <div class="score-wrap">
+      <div class="score-big ${cls}">${score}/${QUIZ.length}</div>
+      <div style="font-size:13px;color:var(--gray-400);margin-top:4px">${pct}%</div>
+      <div class="score-msg">${msg}</div>
+      <button class="retry-btn" onclick="retakeQuiz()">Retake quiz</button>
+    </div>`;
+}
+function retakeQuiz(){
+  document.getElementById('quiz-card').innerHTML=`
+    <div class="quiz-progress" id="quiz-dots"></div>
+    <div class="quiz-q-text" id="quiz-q"></div>
+    <div class="quiz-opts" id="quiz-opts"></div>
+    <div id="quiz-feedback" style="display:none"></div>
+    <button class="quiz-next-btn" id="quiz-next" onclick="nextQuestion()" style="display:none">Next question →</button>`;
+  qIdx=0; score=0; results=[]; renderQ();
+}
+</script>
+</body>
+</html>
