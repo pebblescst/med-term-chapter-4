@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 4 — Integumentary System | Medical Terminology Study Guide</title>
+<style>
+:root{--bg-primary:#ffffff;--bg-secondary:#fdf8f4;--bg-success:#e6f4ea;--bg-warning:#fff8e1;--bg-danger:#fce8e8;--bg-info:#e8f0fc;--bg-muted:#f7f5f2;--text-primary:#111;--text-secondary:#555;--text-muted:#888;--text-success:#1b5e20;--text-warning:#854F0B;--text-danger:#9c2020;--text-info:#1a5c9c;--border:rgba(0,0,0,.18);--border-light:rgba(0,0,0,.09);--terr:#B86020;--terrLt:#FAE8CC;--r:8px;--rl:12px}
+@media(prefers-color-scheme:dark){:root{--bg-primary:#1e1e1e;--bg-secondary:#221a10;--bg-success:#0d2a1a;--bg-warning:#2a1f00;--bg-danger:#2a0d0d;--bg-info:#0d2a45;--bg-muted:#2a2a2a;--text-primary:#eee;--text-secondary:#aaa;--text-muted:#666;--text-success:#81c784;--text-warning:#ffcc66;--text-danger:#e57373;--text-info:#7ab3e8;--border:rgba(255,255,255,.15);--border-light:rgba(255,255,255,.08);--terrLt:#2a1a08}}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg-secondary);color:var(--text-primary);line-height:1.6;padding:0 0 3rem}
+.page-header{background:var(--bg-primary);border-bottom:0.5px solid var(--border);padding:1.25rem 2rem;margin-bottom:1.5rem}.page-header h1{font-size:22px;font-weight:500}.page-header p{font-size:14px;color:var(--text-secondary);margin-top:3px}
+.container{max-width:900px;margin:0 auto;padding:0 1.25rem}.sg{padding:.5rem 0 2rem}
+.tab-bar{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1.25rem}
+.tab-btn{padding:6px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--bg-primary);color:var(--text-secondary);font-size:13px;cursor:pointer;transition:all .15s}
+.tab-btn.active{background:var(--bg-warning);color:var(--text-warning);border-color:var(--terr)}.tab-btn:hover:not(.active){background:var(--bg-muted)}
+.sec{display:none}.sec.active{display:block}
+.sec-hdr{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--text-secondary);margin:1.4rem 0 .65rem;padding-bottom:4px;border-bottom:0.5px solid var(--border-light)}
+.pg{font-size:14px;color:var(--text-secondary);line-height:1.7;margin-bottom:1rem;background:var(--bg-muted);padding:.75rem 1rem;border-radius:var(--r)}
+.stat-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1.25rem}.stat-chip{padding:5px 12px;border-radius:var(--r);border:0.5px solid var(--border-light);font-size:12px;background:var(--bg-primary)}.stat-chip strong{font-weight:600}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px}
+.ccard{background:var(--bg-primary);border:0.5px solid var(--border-light);border-radius:var(--rl);padding:.9rem 1.1rem}.ccard .ctitle{font-size:14px;font-weight:600;color:var(--text-primary);margin-bottom:5px}.ccard .cwt{font-size:11px;font-weight:600;padding:2px 7px;border-radius:var(--r);display:inline-block;margin-bottom:6px}.ccard .cdef{font-size:12px;color:var(--text-secondary);line-height:1.55}
+.dtable{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:.5rem;table-layout:fixed;background:var(--bg-primary);border-radius:var(--rl);overflow:hidden}
+.dtable th{text-align:left;padding:8px 12px;background:var(--bg-muted);border-bottom:0.5px solid var(--border);color:var(--text-secondary);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+.dtable td{padding:8px 12px;border-bottom:0.5px solid var(--border-light);vertical-align:top;color:var(--text-secondary)}.dtable tr:last-child td{border-bottom:none}.dtable tr:hover td{background:var(--bg-secondary)}.dtable .wp{font-weight:600;font-style:italic;color:var(--text-primary);font-size:14px}.dtable .mean{font-weight:600;color:var(--text-primary)}
+.layer-stack{display:flex;flex-direction:column;gap:4px;margin-bottom:1rem}.layer{padding:10px 16px;border-radius:var(--r);border-left:4px solid}.layer .ln{font-weight:600;font-size:14px;margin-bottom:3px}.layer .ld{font-size:12px;color:var(--text-secondary);line-height:1.5}
+.lesion-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:7px;margin-bottom:.75rem}.lesion-card{background:var(--bg-primary);border:0.5px solid var(--border-light);border-radius:var(--r);padding:.65rem .9rem}.lesion-term{font-size:13px;font-weight:600;color:var(--text-primary);margin-bottom:2px}.lesion-def{font-size:11px;color:var(--text-secondary);line-height:1.4}
+.burn-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:.75rem}.burn-card{flex:1;min-width:120px;padding:.75rem 1rem;border-radius:var(--r);border:0.5px solid;text-align:center}.burn-deg{font-size:18px;font-weight:500;margin-bottom:4px}.burn-name{font-size:12px;font-weight:600;margin-bottom:5px}.burn-desc{font-size:11px;line-height:1.4}
+.cl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:8px;margin-bottom:.75rem}.cl-card{background:var(--bg-primary);border:0.5px solid var(--border-light);border-radius:var(--rl);padding:.75rem 1rem}.cl-term{font-size:13px;font-weight:600;color:var(--text-primary);margin-bottom:2px}.cl-break{font-size:10px;color:var(--terr);margin-bottom:3px;font-style:italic}.cl-def{font-size:11px;color:var(--text-secondary);line-height:1.5}
+.fc-controls{display:flex;align-items:center;gap:10px;margin-bottom:1.25rem;flex-wrap:wrap}.fc-sel{padding:6px 10px;border-radius:var(--r);border:1px solid var(--border);background:var(--bg-primary);color:var(--text-primary);font-size:14px}
+.flashcard{background:var(--bg-primary);border:1px solid var(--border);border-radius:var(--rl);padding:1.75rem;min-height:175px;display:flex;flex-direction:column;justify-content:center;align-items:center;cursor:pointer;position:relative}.flashcard:hover{border-color:var(--terr)}
+.fc-badge{position:absolute;top:11px;left:13px;font-size:11px;padding:2px 7px;border-radius:var(--r);font-weight:600}.fc-front{font-size:21px;font-weight:500;text-align:center;color:var(--text-primary)}.fc-back{display:none;text-align:center}.fc-back .meaning{font-size:16px;font-weight:500;color:var(--text-primary);margin-bottom:5px}.fc-back .example{font-size:12px;color:var(--text-secondary)}.fc-hint{font-size:12px;color:var(--text-muted);margin-top:.75rem}.fc-prog{font-size:13px;color:var(--text-secondary);margin-left:auto}
+.fc-actions{display:flex;gap:8px;margin-top:.9rem;flex-wrap:wrap;justify-content:center}
+.btn{padding:7px 16px;border-radius:var(--r);border:1px solid var(--border);background:var(--bg-primary);color:var(--text-primary);font-size:14px;cursor:pointer;transition:all .15s}.btn:hover{background:var(--bg-muted)}
+.btn-ok{border-color:#1A7A52;color:var(--text-success)}.btn-ok:hover{background:var(--bg-success)}.btn-no{border-color:#c62828;color:var(--text-danger)}.btn-no:hover{background:var(--bg-danger)}.fc-score{font-size:13px;color:var(--text-secondary);margin-top:.75rem}
+.quiz-q{background:var(--bg-muted);border-radius:var(--rl);padding:1rem 1.15rem;margin-bottom:1rem;font-size:15px;font-weight:500;line-height:1.5}.quiz-opts{display:flex;flex-direction:column;gap:7px;margin-bottom:1rem}
+.qopt{padding:9px 13px;border-radius:var(--r);border:1px solid var(--border);background:var(--bg-primary);color:var(--text-primary);font-size:14px;cursor:pointer;text-align:left;transition:all .15s}.qopt:hover:not(:disabled){background:var(--bg-muted)}.qopt.correct{background:var(--bg-success);border-color:#1A7A52;color:var(--text-success)}.qopt.wrong{background:var(--bg-danger);border-color:#c62828;color:var(--text-danger)}
+.qfb{font-size:13px;margin-bottom:.9rem;min-height:16px}.qctr{font-size:12px;color:var(--text-muted)}.score-wrap{background:var(--bg-muted);border-radius:var(--rl);padding:2rem;text-align:center}.score-num{font-size:40px;font-weight:500}.score-lbl{font-size:14px;color:var(--text-secondary);margin-top:4px}
+</style>
+</head>
+<body>
+<div class="page-header"><div style="max-width:900px;margin:0 auto"><h1>Chapter 4 &#8212; Integumentary System</h1><p>Medical Terminology &nbsp;&middot;&nbsp; 8 Prefixes &nbsp;&middot;&nbsp; 7 Suffixes &nbsp;&middot;&nbsp; 13 Combining Forms &nbsp;&middot;&nbsp; 28 Key Terms &nbsp;&middot;&nbsp; 3 Skin Layers &nbsp;&middot;&nbsp; 5 Functions</p></div></div>
+<div class="container"><div class="sg">
+<div class="tab-bar">
+<button class="tab-btn active" onclick="showTab('overview',this)">Overview</button>
+<button class="tab-btn" onclick="showTab('anatomy',this)">Skin Anatomy</button>
+<button class="tab-btn" onclick="showTab('wordparts',this)">Word Parts</button>
+<button class="tab-btn" onclick="showTab('combining',this)">Combining Forms</button>
+<button class="tab-btn" onclick="showTab('clinical',this)">Clinical Terms</button>
+<button class="tab-btn" onclick="showTab('procedures',this)">Procedures</button>
+<button class="tab-btn" onclick="showTab('flashcards',this)">Flashcards</button>
+<button class="tab-btn" onclick="showTab('quiz',this)">Quiz</button>
+</div>
+<div class="sec active" id="tab-overview">
+
+<div class="stat-row"><span class="stat-chip"><strong>8</strong> prefixes</span><span class="stat-chip"><strong>7</strong> suffixes</span><span class="stat-chip"><strong>13</strong> combining forms</span><span class="stat-chip"><strong>28</strong> key terms</span><span class="stat-chip"><strong>5</strong> functions</span><span class="stat-chip"><strong>3</strong> skin layers</span></div>
+<div class="pg">Chapter 4 covers the <strong>integumentary system</strong> &mdash; the body&rsquo;s largest organ by surface area (~2 m&sup2;). The skin (cutane/o, dermat/o, derm/o) is the first line of defense, temperature regulator, sensory organ, and vitamin D factory. Specialty: <em>Dermatology</em> (dermatologist).</div>
+<div class="sec-hdr">5 System functions</div>
+<div class="card-grid">
+<div class="ccard"><span class="cwt" style="background:var(--bg-danger);color:var(--text-danger)">Defense</span><div class="ctitle">First line of defense</div><div class="cdef">Intact skin is the primary barrier against pathogens, UV radiation, chemicals, and mechanical injury. When broken, pathogens gain entry &mdash; critical importance in burn patients.</div></div>
+<div class="ccard"><span class="cwt" style="background:var(--bg-info);color:var(--text-info)">Temperature</span><div class="ctitle">Thermoregulation</div><div class="cdef">Sweating (sudoriferous glands &rarr; evaporative cooling) and shivering (muscle contractions &rarr; heat) plus vasodilation/vasoconstriction in dermal blood vessels.</div></div>
+<div class="ccard"><span class="cwt" style="background:var(--bg-warning);color:var(--text-warning)">Sensation</span><div class="ctitle">Sensory reception</div><div class="cdef">Dermis contains sensory nerve endings for pain, pressure, temperature, touch, and vibration. Meissner&rsquo;s corpuscles (light touch), Pacinian corpuscles (pressure), Merkel&rsquo;s discs (sustained touch).</div></div>
+<div class="ccard"><span class="cwt" style="background:var(--bg-success);color:var(--text-success)">Vitamin D</span><div class="ctitle">Vitamin D synthesis</div><div class="cdef">UV triggers conversion of a skin precursor to vitamin D &rarr; essential for calcium absorption (bone health). Melanin blocks UV &rarr; darker skin produces less vitamin D per sun exposure.</div></div>
+<div class="ccard"><span class="cwt" style="background:var(--bg-muted);color:var(--text-secondary)">Elimination</span><div class="ctitle">Waste elimination</div><div class="cdef">Sweat (sudoriferous glands) contains water, salts, urea, and uric acid &mdash; small amounts of metabolic waste eliminated through perspiration.</div></div>
+</div>
+<div class="sec-hdr">A&amp;P terms</div>
+<table class="dtable"><colgroup><col style="width:20%"><col style="width:80%"></colgroup>
+<thead><tr><th>Term</th><th>Definition</th></tr></thead>
+<tbody>
+<tr><td class="mean">Dermis</td><td>Middle skin layer (derm/o, dermat/o) = corium. Vascular connective tissue containing blood vessels, lymphatics, nerves, hair follicles, sebaceous and sudoriferous glands. Thicker than epidermis.</td></tr>
+<tr><td class="mean">Epidermis</td><td>Outermost layer (epi- + derm/o). Avascular stratified squamous epithelium. Contains keratinocytes (produce keratin) and melanocytes (produce melanin). Renewed every ~28-30 days.</td></tr>
+<tr><td class="mean">Eponychium</td><td>The cuticle (epi- + onych/o + -ium = upon the nail). Fold of skin overlapping the nail root. Seals the space between nail and skin to prevent infection.</td></tr>
+<tr><td class="mean">Hair follicle</td><td>Tube-like depression (follicul/o) from which hair grows. Extends into the dermis. Contains hair root (living) and papilla (vascular base nourishing growth). Hair shaft = visible dead keratin above skin.</td></tr>
+<tr><td class="mean">Nail bed</td><td>Epithelium beneath the nail body (onych/o, ungu/o). Pink color reflects blood supply. Cyanosis of nail beds = hypoxia. Blanching/capillary refill test assesses perfusion.</td></tr>
+<tr><td class="mean">Nail body</td><td>Visible portion of nail &mdash; hard flat plate of dead keratin overlying nail bed. Also called the nail plate.</td></tr>
+<tr><td class="mean">Nail root</td><td>Proximal hidden portion of nail embedded in skin fold. The growing portion produced by the nail matrix.</td></tr>
+<tr><td class="mean">Sebaceous glands</td><td>Oil-secreting glands (seb/o) associated with hair follicles. Secrete sebum &mdash; lubricates skin and hair, inhibits bacterial growth. ABSENT on palms and soles. Blocked &rarr; comedone &rarr; acne.</td></tr>
+<tr><td class="mean">Subcutaneous tissue</td><td>Deepest layer (sub- + cutane/o) = hypodermis. Adipose tissue (adip/o) + loose connective tissue. Insulation, energy storage, cushioning. Site of SQ injections.</td></tr>
+<tr><td class="mean">Sudoriferous glands</td><td>Sweat glands (hidr/o, sudor/i, hidraden/o). Eccrine (thermoregulation &mdash; all body) and apocrine (body odor &mdash; axillae, groin). Anhidrosis = absence; hyperhidrosis = excessive.</td></tr>
+</tbody></table>
+
+</div>
+<div class="sec" id="tab-anatomy">
+
+<div class="pg">Detailed anatomy of the three skin layers, glands, hair, nails, lesion classification, and burn grading.</div>
+<div class="sec-hdr">Skin layers</div>
+<div class="layer-stack">
+<div class="layer" style="background:var(--bg-danger);border-color:#c62828"><div class="ln" style="color:var(--text-danger)">Epidermis (epi- + derm/o) &mdash; outermost, avascular</div><div class="ld">Stratified squamous epithelium. Key layers: <strong>Stratum corneum</strong> (corne/o) = outermost dead keratin cells &mdash; shed constantly. <strong>Stratum germinativum/basale</strong> (bas/o) = deepest layer, site of cell division, origin of basal cell carcinoma (BCC). <strong>Keratinocytes</strong> produce keratin (kerat/o = hard protein). <strong>Melanocytes</strong> produce melanin (melan/o = dark pigment) &mdash; UV protection. No blood vessels &mdash; nutrients diffuse from dermis. Renewed every ~28-30 days.</div></div>
+<div class="layer" style="background:var(--bg-warning);border-color:#854F0B"><div class="ln" style="color:var(--text-warning)">Dermis (derm/o, dermat/o) = corium &mdash; middle, vascular</div><div class="ld">Vascular connective tissue. Contains: blood/lymphatic vessels, sensory nerve endings, hair follicles (follicul/o), sebaceous glands (seb/o &mdash; oil), sudoriferous glands (hidr/o &mdash; sweat). Papillary dermis (top) = capillary-rich, fingerprint ridges. Reticular dermis (deep) = dense collagen + elastin &rarr; skin strength and elasticity.</div></div>
+<div class="layer" style="background:var(--bg-muted);border-color:#888"><div class="ln" style="color:var(--text-secondary)">Hypodermis / Subcutaneous layer (sub- + cutane/o) &mdash; deepest</div><div class="ld">Also: superficial fascia. Adipose tissue (adip/o) + loose connective tissue. Functions: thermal insulation, energy storage, cushioning, anchors skin to underlying structures. Site of SQ/SC injections (insulin, heparin). Not technically part of the skin.</div></div>
+</div>
+<div class="sec-hdr">Glands, hair &amp; nails</div>
+<div class="card-grid">
+<div class="ccard"><span class="cwt" style="background:var(--bg-info);color:var(--text-info)">hidr/o, hidraden/o</span><div class="ctitle">Sudoriferous (sweat) glands</div><div class="cdef"><strong>Eccrine:</strong> most numerous, thermoregulation, watery sweat. <strong>Apocrine:</strong> axillae/groin, activated at puberty &rarr; body odor when bacteria metabolize secretion. Anhidrosis (an- + hidr/o + -osis) = absence of sweating &rarr; heat stroke risk. Hyperhidrosis = excessive sweating.</div></div>
+<div class="ccard"><span class="cwt" style="background:var(--bg-warning);color:var(--text-warning)">seb/o, sebac/o</span><div class="ctitle">Sebaceous (oil) glands</div><div class="cdef">Attached to hair follicles. Secrete sebum &rarr; lubricates skin and hair, inhibits bacteria. ABSENT on palms and soles. Blocked &rarr; comedone (blackhead/whitehead) &rarr; acne vulgaris if bacteria colonize. Seborrhea = excess sebum flow.</div></div>
+<div class="ccard"><span class="cwt" style="background:var(--bg-success);color:var(--text-success)">trich/o, pil/o, follicul/o</span><div class="ctitle">Hair</div><div class="cdef">Hair follicle = tube-like skin depression. Hair root = living portion. Hair papilla = vascular base. Hair shaft = visible dead keratin. Arrector pili = smooth muscle &rarr; piloerection (goosebumps). Pilonidal cyst = hair-containing cyst at sacrococcygeal area.</div></div>
+<div class="ccard"><span class="cwt" style="background:var(--bg-danger);color:var(--text-danger)">onych/o, ungu/o</span><div class="ctitle">Nails</div><div class="cdef">Nail body = visible hard plate (dead keratin). Nail root = proximal hidden growing portion. Nail bed = pink epithelium (reflects blood supply). Lunula = pale crescent (visible matrix). Eponychium = cuticle (epi- + onych/o). Subungual = sub- + ungu/o + -al = below the nail.</div></div>
+</div>
+<div class="sec-hdr">Primary skin lesions</div>
+<div class="lesion-grid">
+<div class="lesion-card"><div class="lesion-term">Macule</div><div class="lesion-def">Flat, discolored &lt;1 cm. Freckle, petechiae. No surface change.</div></div>
+<div class="lesion-card"><div class="lesion-term">Patch</div><div class="lesion-def">Flat, discolored &gt;1 cm. Vitiligo. Large macule.</div></div>
+<div class="lesion-card"><div class="lesion-term">Papule</div><div class="lesion-def">Solid, raised &lt;1 cm. Acne, wart. Small bump with borders.</div></div>
+<div class="lesion-card"><div class="lesion-term">Plaque</div><div class="lesion-def">Solid, raised &gt;1 cm. Psoriasis. Large flat-topped papule.</div></div>
+<div class="lesion-card"><div class="lesion-term">Vesicle</div><div class="lesion-def">Fluid blister &lt;1 cm. Chickenpox, HSV. Clear fluid, thin-walled.</div></div>
+<div class="lesion-card"><div class="lesion-term">Bulla</div><div class="lesion-def">Fluid blister &gt;1 cm. 2nd-degree burn. Large vesicle.</div></div>
+<div class="lesion-card"><div class="lesion-term">Pustule</div><div class="lesion-def">Pus-filled lesion. Acne, impetigo. White/yellow content.</div></div>
+<div class="lesion-card"><div class="lesion-term">Wheal</div><div class="lesion-def">Transient raised edema. Hives. Resolves within hours.</div></div>
+<div class="lesion-card"><div class="lesion-term">Petechia</div><div class="lesion-def">Pinpoint hemorrhage &lt;2 mm. Non-blanching. Thrombocytopenia.</div></div>
+<div class="lesion-card"><div class="lesion-term">Ecchymosis</div><div class="lesion-def">Bruise &gt;2 mm. Red&rarr;purple&rarr;green&rarr;yellow. Non-blanching.</div></div>
+<div class="lesion-card"><div class="lesion-term">Nodule</div><div class="lesion-def">Solid deeper mass 0.5-2 cm. Lipoma. Deeper than papule.</div></div>
+<div class="lesion-card"><div class="lesion-term">Tumor</div><div class="lesion-def">Solid mass &gt;2 cm. Not necessarily malignant &mdash; just large.</div></div>
+</div>
+<div class="sec-hdr">Secondary skin lesions</div>
+<div class="lesion-grid">
+<div class="lesion-card"><div class="lesion-term">Cicatrix</div><div class="lesion-def">Scar &mdash; fibrous tissue after wound healing.</div></div>
+<div class="lesion-card"><div class="lesion-term">Keloid</div><div class="lesion-def">Hypertrophic scar beyond wound borders. Rx: steroid injection.</div></div>
+<div class="lesion-card"><div class="lesion-term">Eschar</div><div class="lesion-def">Dead leathery tissue over wound/burn. Must be removed (escharotomy or d&eacute;bridement).</div></div>
+<div class="lesion-card"><div class="lesion-term">Fissure</div><div class="lesion-def">Linear crack in skin. Dry cracked heels, hand eczema.</div></div>
+<div class="lesion-card"><div class="lesion-term">Ulcer</div><div class="lesion-def">Deep skin loss extending through dermis. Decubitus ulcer.</div></div>
+<div class="lesion-card"><div class="lesion-term">Atrophy</div><div class="lesion-def">Thinning of skin. Aging, prolonged steroids, chronic sun damage.</div></div>
+</div>
+<div class="sec-hdr">Burns &mdash; classification</div>
+<div class="burn-row">
+<div class="burn-card" style="background:var(--bg-warning);border-color:#854F0B;color:var(--text-warning)"><div class="burn-deg">1&deg;</div><div class="burn-name">Superficial</div><div class="burn-desc">Epidermis only. Red, dry, painful. Sunburn. Heals 3-7 days, no scar.</div></div>
+<div class="burn-card" style="background:var(--bg-danger);border-color:#c62828;color:var(--text-danger)"><div class="burn-deg">2&deg;</div><div class="burn-name">Partial thickness</div><div class="burn-desc">Epidermis + part of dermis. Blistering (bullae). Very painful. Deep type may need grafting.</div></div>
+<div class="burn-card" style="background:var(--bg-danger);border-color:#c62828;color:var(--text-danger)"><div class="burn-deg">3&deg;</div><div class="burn-name">Full thickness</div><div class="burn-desc">All skin layers destroyed. Eschar. PAINLESS (nerve destruction). Requires grafting.</div></div>
+<div class="burn-card" style="background:var(--bg-muted);border-color:#888;color:var(--text-secondary)"><div class="burn-deg">4&deg;</div><div class="burn-name">Deep full thickness</div><div class="burn-desc">Into muscle/tendon/bone. Charred. Amputation may be needed.</div></div>
+</div>
+<div class="pg"><strong>Rule of Nines:</strong> Head = 9% &middot; Each arm = 9% &middot; Anterior trunk = 18% &middot; Posterior trunk = 18% &middot; Each leg = 18% &middot; Genitalia = 1%. Guides fluid resuscitation (Parkland formula: 4 mL &times; kg &times; %TBSA in first 24 hrs).</div>
+
+</div>
+<div class="sec" id="tab-wordparts">
+
+<div class="pg">8 prefixes and 7 suffixes. Two suffixes unique to this chapter: <strong>-cide</strong> (killing agent) and <strong>-lytic</strong> (dissolving/breaking down).</div>
+<div class="sec-hdr">Prefixes (8)</div>
+<table class="dtable"><colgroup><col style="width:12%"><col style="width:22%"><col></colgroup>
+<thead><tr><th>Prefix</th><th>Meaning</th><th>Examples &amp; notes</th></tr></thead>
+<tbody>
+<tr><td class="wp">an-</td><td class="mean">without, absence of</td><td>Anhidrosis (an- + hidr/o + -osis = without sweating); anesthesia; anorexia. Use an- before vowels, a- before consonants.</td></tr>
+<tr><td class="wp">crypt-</td><td class="mean">hidden, concealed</td><td>Onychocryptosis (onych/o + crypt- + -osis = hidden/ingrown nail); cryptorchidism. Greek kryptos = hidden.</td></tr>
+<tr><td class="wp">epi-</td><td class="mean">above, upon, on</td><td>Epidermis (upon the skin = outermost layer); eponychium (upon the nail = cuticle). Universal prefix.</td></tr>
+<tr><td class="wp">hyper-</td><td class="mean">above, excessive, elevated</td><td>Hypertrichosis (excessive hair); hyperhidrosis (excessive sweating); hyperchromia. &#9888; Opposite of hypo-.</td></tr>
+<tr><td class="wp">intra-</td><td class="mean">within, inside</td><td>Intradermal (within the skin &mdash; ID injection, TB Mantoux test). &#9888; Not inter- (between).</td></tr>
+<tr><td class="wp">par-</td><td class="mean">beside, near, abnormal</td><td>Paronychia (par- + onych/o + -ia = infection beside the nail fold). Shortened form of para-.</td></tr>
+<tr><td class="wp">sub-</td><td class="mean">below, under, beneath</td><td>Subcutaneous (below the skin); subungual (below the nail &mdash; subungual hematoma from crush injury).</td></tr>
+<tr><td class="wp">trans-</td><td class="mean">through, across, beyond</td><td>Transdermal (through the skin &mdash; medication patches deliver systemically). Compare intra- (within skin).</td></tr>
+</tbody></table>
+<div class="sec-hdr">Suffixes (7)</div>
+<table class="dtable"><colgroup><col style="width:12%"><col style="width:22%"><col></colgroup>
+<thead><tr><th>Suffix</th><th>Meaning</th><th>Examples &amp; notes</th></tr></thead>
+<tbody>
+<tr><td class="wp">-cide</td><td class="mean">killing agent, that which kills</td><td>Pediculicide (kills lice); fungicide (kills fungi); scabicide (kills mites); germicide. &#9888; -cide = KILLS living organism; -lytic = DISSOLVES structure &mdash; different mechanisms!</td></tr>
+<tr><td class="wp">-ectomy</td><td class="mean">surgical removal</td><td>Rhytidectomy (facelift &mdash; removes wrinkles); lipectomy (fat removal). Universal therapeutic suffix.</td></tr>
+<tr><td class="wp">-itis</td><td class="mean">inflammation</td><td>Folliculitis (follicle inflammation); dermatitis; onychitis. Universal pathology suffix.</td></tr>
+<tr><td class="wp">-lytic</td><td class="mean">destroying, dissolving, breaking down</td><td>Keratolytic (dissolves keratin &mdash; for warts, calluses, psoriasis). &#9888; -lytic = DISSOLVES; -cide = KILLS.</td></tr>
+<tr><td class="wp">-oma</td><td class="mean">tumor, mass, swelling</td><td>Melanoma (malignant melanocyte tumor); hematoma (blood swelling); lipoma (benign fat tumor).</td></tr>
+<tr><td class="wp">-osis</td><td class="mean">abnormal condition, process</td><td>Onychocryptosis (ingrown nail); onychomycosis (nail fungus); pediculosis (lice); anhidrosis.</td></tr>
+<tr><td class="wp">-plasty</td><td class="mean">surgical repair/reconstruction</td><td>Dermatoplasty (skin repair/grafting); blepharoplasty (eyelid repair). Universal therapeutic suffix.</td></tr>
+</tbody></table>
+<div class="sec-hdr">&#9888; Key distinctions</div>
+<div class="card-grid">
+<div class="ccard"><div class="ctitle">-cide vs -lytic</div><div class="cdef">-cide = substance that KILLS a living organism (pediculicide kills lice; the louse is dead). -lytic = pertaining to DISSOLVING a structure (keratolytic dissolves keratin protein; the protein breaks down). Different mechanisms.</div></div>
+<div class="ccard"><div class="ctitle">intra- vs trans- (skin routes)</div><div class="cdef">intra- = WITHIN the dermis (ID injection &mdash; stays in skin; creates wheal for TB test). trans- = THROUGH all skin layers to circulation (transdermal patch &mdash; medication reaches bloodstream through skin).</div></div>
+<div class="ccard"><div class="ctitle">onych/o vs ungu/o</div><div class="cdef">Both = nail, different origin: onych/o (Greek) &rarr; pathological compound terms (onychomycosis, paronychia). ungu/o (Latin) &rarr; directional terms (subungual). Know both for exam coverage.</div></div>
+<div class="ccard"><div class="ctitle">hidr/o vs hydr/o &#8212; #1 trap</div><div class="cdef">hidr/o = SWEAT (anhidrosis, hyperhidrosis, hidradenitis). hydr/o = WATER (dehydration, hydrocephalus). One letter difference (i vs y) = completely different meaning. Most frequent spelling error in Chapter 4.</div></div>
+</div>
+
+</div>
+<div class="sec" id="tab-combining">
+
+<div class="pg">13 combining forms from the PDF. The skin has THREE (derm/o, dermat/o, cutane/o) and nails have TWO (onych/o, ungu/o). Critical: hidr/o (sweat) &ne; hydr/o (water)!</div>
+<div class="sec-hdr">Core combining forms &mdash; PDF list (13)</div>
+<table class="dtable"><colgroup><col style="width:16%"><col style="width:20%"><col></colgroup>
+<thead><tr><th>Combining form</th><th>Meaning</th><th>Examples &amp; notes</th></tr></thead>
+<tbody>
+<tr><td class="wp">cutane/o</td><td class="mean">skin (Latin)</td><td>Subcutaneous (below skin), percutaneous (through skin). Latin origin. Used in directional/positional terms.</td></tr>
+<tr><td class="wp">dermat/o, derm/o</td><td class="mean">skin (Greek)</td><td>Dermatitis, dermatology, dermatoplasty. dermat/o for compound clinical terms; derm/o for shorter forms (dermis, hypodermic).</td></tr>
+<tr><td class="wp">follicul/o</td><td class="mean">follicle</td><td>Folliculitis (hair follicle inflammation). Hair follicle = tube-like depression in dermis.</td></tr>
+<tr><td class="wp">hidr/o</td><td class="mean">sweat, perspiration</td><td>Anhidrosis (no sweat), hyperhidrosis (excess sweat). &#9888; hidr/o (SWEAT) &ne; hydr/o (WATER) &mdash; one letter!</td></tr>
+<tr><td class="wp">kerat/o</td><td class="mean">hard, horny, keratin</td><td>Keratolytic (dissolves keratin), keratosis (abnormal keratin growth). Also = cornea in ophthalmology (context determines meaning).</td></tr>
+<tr><td class="wp">melan/o</td><td class="mean">black, dark, melanin</td><td>Melanoma (malignant melanocyte tumor), melanin (skin pigment), melanocyte (pigment cell). Melanin protects against UV.</td></tr>
+<tr><td class="wp">myc/o</td><td class="mean">fungus, mold</td><td>Onychomycosis (nail fungus), dermatomycosis (skin fungal infection). Antifungal = antimycotic.</td></tr>
+<tr><td class="wp">onych/o</td><td class="mean">nail (Greek)</td><td>Onychocryptosis (ingrown nail), onychomycosis (nail fungus), paronychia (beside nail). Greek. Pathological terms.</td></tr>
+<tr><td class="wp">pedicul/i</td><td class="mean">lice (louse)</td><td>Pediculicide (kills lice), pediculosis (lice infestation). Uses &lsquo;i&rsquo; as combining vowel (like pelv/i). Lice = pedicul/i; mites = scabies.</td></tr>
+<tr><td class="wp">rhytid/o</td><td class="mean">wrinkle</td><td>Rhytidectomy (facelift = wrinkle removal). From Greek rhytis = wrinkle. Primarily cosmetic dermatology.</td></tr>
+<tr><td class="wp">seb/o</td><td class="mean">sebum, oil</td><td>Seborrhea (seb/o + -rrhea = excess sebum flow = oily skin/scalp), seborrheic dermatitis (dandruff).</td></tr>
+<tr><td class="wp">trich/o</td><td class="mean">hair (Greek)</td><td>Hypertrichosis (excess hair), trichomycosis (fungal hair infection). &#9888; trich/o &ne; rachi/o (spine).</td></tr>
+<tr><td class="wp">ungu/o</td><td class="mean">nail (Latin)</td><td>Subungual (below the nail &mdash; subungual hematoma from crush injury), ungual (pertaining to nail). Latin. Directional terms.</td></tr>
+</tbody></table>
+<div class="sec-hdr">Additional combining forms &mdash; from lecture slides</div>
+<table class="dtable"><colgroup><col style="width:16%"><col style="width:20%"><col></colgroup>
+<thead><tr><th>Combining form</th><th>Meaning</th><th>Examples</th></tr></thead>
+<tbody>
+<tr><td class="wp">adip/o, lip/o</td><td class="mean">fat, adipose tissue</td><td>Adipose tissue (subcutaneous fat); lipoma (benign fat tumor); liposuction; lipectomy (fat removal surgery).</td></tr>
+<tr><td class="wp">bas/o</td><td class="mean">base, basal</td><td>Stratum basale/germinativum = basal epidermal layer; basal cell carcinoma (BCC) originates here.</td></tr>
+<tr><td class="wp">corne/o</td><td class="mean">horny, cornified tissue</td><td>Stratum corneum = outermost layer of dead cornified cells; corn/clavus = hardened skin from pressure.</td></tr>
+<tr><td class="wp">hidraden/o</td><td class="mean">sweat gland</td><td>Hidradenitis (sweat gland inflammation); hidradenitis suppurativa. &#9888; hidraden/o (gland) vs hidr/o (sweat).</td></tr>
+<tr><td class="wp">pil/o</td><td class="mean">hair (Latin)</td><td>Pilonidal cyst (pil/o + nidal = nest = hair-containing cyst); piloerection (arrector pili = goosebumps).</td></tr>
+<tr><td class="wp">squam/o</td><td class="mean">scale, scaly</td><td>Stratified squamous epithelium = scaly layered epidermis; squamous cell carcinoma (SCC).</td></tr>
+<tr><td class="wp">xer/o</td><td class="mean">dry</td><td>Xeroderma (dry skin); xerophthalmia (dry eyes); xerostomia (dry mouth).</td></tr>
+</tbody></table>
+
+</div>
+<div class="sec" id="tab-clinical">
+
+<div class="pg">Clinical terms organized by category &mdash; bacterial, fungal, viral, parasitic infections, nail disorders, inflammatory conditions, hair disorders, and neoplasms.</div>
+<div class="sec-hdr">Bacterial infections</div>
+<div class="cl-grid">
+<div class="cl-card"><div class="cl-term">Folliculitis</div><div class="cl-break">follicul/o + -itis</div><div class="cl-def">Hair follicle inflammation (Staph aureus). Razor bumps, hot tub folliculitis. Topical/oral antibiotics.</div></div>
+<div class="cl-card"><div class="cl-term">Furuncle (boil)</div><div class="cl-break">deep folliculitis</div><div class="cl-def">Deep follicle + surrounding tissue &rarr; painful pus-filled nodule. Staph aureus. I&amp;D + antibiotics.</div></div>
+<div class="cl-card"><div class="cl-term">Carbuncle</div><div class="cl-break">cluster of furuncles</div><div class="cl-def">Multiple coalescing furuncles &rarr; larger abscess with multiple drainage points. Systemic antibiotics.</div></div>
+<div class="cl-card"><div class="cl-term">Cellulitis</div><div class="cl-break">dermal/SC infection</div><div class="cl-def">Diffuse dermis + subcutaneous infection (Staph/Strep). Spreading erythema, warmth, swelling. Antibiotics.</div></div>
+<div class="cl-card"><div class="cl-term">Impetigo</div><div class="cl-break">superficial, contagious</div><div class="cl-def">Honey-colored crusted lesions &mdash; children&rsquo;s faces. Highly contagious. Topical mupirocin or oral antibiotics.</div></div>
+<div class="cl-card"><div class="cl-term">Pilonidal cyst</div><div class="cl-break">pil/o + nidal (nest)</div><div class="cl-def">Hair-containing cyst at sacrococcygeal area &rarr; infected abscess. I&amp;D, surgical excision.</div></div>
+</div>
+<div class="sec-hdr">Fungal &amp; parasitic infections</div>
+<div class="cl-grid">
+<div class="cl-card"><div class="cl-term">Onychomycosis</div><div class="cl-break">onych/o + myc/o + -osis</div><div class="cl-def">Fungal nail infection &mdash; most common nail disorder. Thickened, yellow/brown, brittle nails. Terbinafine oral (3-6 months).</div></div>
+<div class="cl-card"><div class="cl-term">Tinea pedis</div><div class="cl-break">tinea + ped/o (foot)</div><div class="cl-def">Athlete&rsquo;s foot. Itching, scaling, maceration between toes. Also: tinea capitis (scalp), corporis (ringworm), cruris (jock itch).</div></div>
+<div class="cl-card"><div class="cl-term">Candidiasis</div><div class="cl-break">Candida yeast</div><div class="cl-def">Yeast infection in moist areas (skin folds, oral/vaginal). White patches. Topical azoles; oral fluconazole for severe.</div></div>
+<div class="cl-card"><div class="cl-term">Pediculosis</div><div class="cl-break">pedicul/i + -osis</div><div class="cl-def">Lice infestation (capitis = head, corporis = body, pubis = groin). Nits = eggs on hair. Rx: pediculicide (permethrin).</div></div>
+<div class="cl-card"><div class="cl-term">Scabies</div><div class="cl-break">Sarcoptes scabiei mite</div><div class="cl-def">Mite burrows under skin &rarr; intense nighttime pruritus. Burrow lines between fingers/wrists. Rx: permethrin cream (scabicide).</div></div>
+</div>
+<div class="sec-hdr">Viral infections</div>
+<div class="cl-grid">
+<div class="cl-card"><div class="cl-term">Herpes simplex (HSV)</div><div class="cl-break">HSV-1 / HSV-2</div><div class="cl-def">HSV-1: oral herpes (cold sores). HSV-2: genital herpes. Grouped vesicles. Latent in dorsal root ganglia. Rx: acyclovir, valacyclovir.</div></div>
+<div class="cl-card"><div class="cl-term">Herpes zoster</div><div class="cl-break">VZV reactivation</div><div class="cl-def">Shingles &mdash; reactivation of chickenpox virus &rarr; dermatomal painful vesicles. Post-herpetic neuralgia. Rx: antivirals within 72 hrs.</div></div>
+<div class="cl-card"><div class="cl-term">Verruca</div><div class="cl-break">HPV wart</div><div class="cl-def">Wart from HPV. Types: vulgaris (common), plantar (foot), condyloma (genital). Rx: keratolytics (salicylic acid), cryotherapy.</div></div>
+</div>
+<div class="sec-hdr">Inflammatory &amp; immune disorders</div>
+<div class="cl-grid">
+<div class="cl-card"><div class="cl-term">Eczema / Atopic dermatitis</div><div class="cl-break">dermat/o + -itis</div><div class="cl-def">Chronic inflammatory &mdash; intense pruritus, dry skin. IgE-mediated (atopic triad: eczema + asthma + allergic rhinitis). Rx: emollients, topical steroids, tacrolimus.</div></div>
+<div class="cl-card"><div class="cl-term">Psoriasis</div><div class="cl-break">autoimmune epidermal</div><div class="cl-def">Autoimmune &rarr; thick silvery-white plaques on elbows, knees, scalp. Not contagious. Rx: topical steroids, biologics, PUVA.</div></div>
+<div class="cl-card"><div class="cl-term">Acne vulgaris</div><div class="cl-break">seb/o + follicul/o</div><div class="cl-def">Excess sebum + keratin plug (comedone) + C. acnes bacteria + inflammation. Rx: retinoids, benzoyl peroxide, antibiotics, isotretinoin.</div></div>
+<div class="cl-card"><div class="cl-term">Decubitus ulcer</div><div class="cl-break">pressure sore/bedsore</div><div class="cl-def">Pressure-induced necrosis over bony prominences (sacrum, heel). Stages I-IV. Reposition q2h (prevention). Rx: d&eacute;bridement, wound care.</div></div>
+<div class="cl-card"><div class="cl-term">Seborrheic dermatitis</div><div class="cl-break">seb/o + derm/o + -itis</div><div class="cl-def">Greasy scales on scalp (dandruff), face. Cradle cap in infants. Rx: ketoconazole shampoo, topical steroids.</div></div>
+</div>
+<div class="sec-hdr">Nail disorders</div>
+<div class="cl-grid">
+<div class="cl-card"><div class="cl-term">Onychocryptosis</div><div class="cl-break">onych/o + crypt- + -osis</div><div class="cl-def">Ingrown nail &mdash; edge grows into nail fold. Great toe. Improper cutting + tight shoes. Rx: warm soaks, partial nail avulsion for recurrent.</div></div>
+<div class="cl-card"><div class="cl-term">Paronychia</div><div class="cl-break">par- + onych/o + -ia</div><div class="cl-def">Infection BESIDE nail fold (par- = beside). Acute = Staph aureus. Chronic = Candida. Rx: warm soaks, I&amp;D, antifungal.</div></div>
+<div class="cl-card"><div class="cl-term">Onycholysis</div><div class="cl-break">onych/o + -lysis</div><div class="cl-def">Separation of nail from nail bed. Causes: psoriasis, trauma, fungal, thyroid disease. White/yellow appearance under nail.</div></div>
+<div class="cl-card"><div class="cl-term">Subungual hematoma</div><div class="cl-break">sub- + ungu/o + hemat/o</div><div class="cl-def">Blood under nail from crush injury. Dark-blue, painful. Large hematomas need trephination (drainage hole).</div></div>
+</div>
+<div class="sec-hdr">Hair, pigmentation &amp; sweat disorders</div>
+<div class="cl-grid">
+<div class="cl-card"><div class="cl-term">Alopecia</div><div class="cl-break">hair loss</div><div class="cl-def">Androgenetic (most common &mdash; M/F pattern baldness), alopecia areata (autoimmune patchy), telogen effluvium (stress diffuse), cicatricial (scarring, permanent).</div></div>
+<div class="cl-card"><div class="cl-term">Hypertrichosis</div><div class="cl-break">hyper- + trich/o + -osis</div><div class="cl-def">Excessive hair anywhere on body. Congenital or acquired (minoxidil, cyclosporine). &ne; hirsutism (androgen-driven female-pattern).</div></div>
+<div class="cl-card"><div class="cl-term">Melanoma</div><div class="cl-break">melan/o + -oma</div><div class="cl-def">Most deadly skin cancer &mdash; malignant melanocytes. ABCDE: Asymmetry, Border, Color, Diameter &gt;6 mm, Evolution. Wide excision, immunotherapy, targeted therapy.</div></div>
+<div class="cl-card"><div class="cl-term">Nevus</div><div class="cl-break">mole / birthmark</div><div class="cl-def">Benign melanocyte collection. Plural: nevi. Dysplastic nevus = atypical mole &rarr; increased melanoma risk. Monitor with ABCDE annually.</div></div>
+<div class="cl-card"><div class="cl-term">Anhidrosis</div><div class="cl-break">an- + hidr/o + -osis</div><div class="cl-def">Absence of sweating. Cannot thermoregulate &rarr; heat stroke risk. Causes: autonomic dysfunction, skin disease, nerve damage.</div></div>
+<div class="cl-card"><div class="cl-term">Seborrhea</div><div class="cl-break">seb/o + -rrhea</div><div class="cl-def">Excessive sebum flow &rarr; oily skin/scalp. Associated with seborrheic dermatitis (dandruff) and acne.</div></div>
+<div class="cl-card"><div class="cl-term">Ecchymosis</div><div class="cl-break">bruise / extravasation</div><div class="cl-def">Blood extravasation into skin &gt;2 mm. Red&rarr;purple&rarr;green&rarr;yellow (hemoglobin degradation). Non-blanching. Multiple unexplained &rarr; investigate coagulopathy.</div></div>
+</div>
+
+</div>
+<div class="sec" id="tab-procedures">
+
+<div class="pg">Diagnostic and therapeutic procedures, skin grafting, cosmetic procedures, and drug administration routes.</div>
+<div class="sec-hdr">Diagnostic procedures</div>
+<table class="dtable"><colgroup><col style="width:22%"><col style="width:78%"></colgroup>
+<thead><tr><th>Term</th><th>Definition &amp; notes</th></tr></thead>
+<tbody>
+<tr><td class="mean">TB skin test (Mantoux)</td><td>Intradermal (ID) injection of 0.1 mL PPD &mdash; within the dermis at 15&deg; angle, bevel up &rarr; raises a wheal. Read at 48-72 hrs: induration (not redness) &ge;10 mm = positive (prior TB exposure).</td></tr>
+<tr><td class="mean">Punch biopsy</td><td>Circular 4-6 mm tool removes core through all skin layers. Most common type for histological diagnosis of skin lesions. Sutures close the defect.</td></tr>
+<tr><td class="mean">Excisional biopsy</td><td>Complete removal of entire lesion + margin of normal skin &mdash; both diagnostic AND therapeutic. Used for suspicious moles, small tumors. Preferred approach for melanoma.</td></tr>
+<tr><td class="mean">Incisional biopsy</td><td>Sample portion of a large lesion for histological exam. Rest of lesion remains &mdash; diagnose first, then plan treatment.</td></tr>
+<tr><td class="mean">Wood&rsquo;s light examination</td><td>UV (black light) exam. Fungi and bacteria fluoresce: tinea capitis (green), erythrasma (coral red). Fast, no samples needed.</td></tr>
+<tr><td class="mean">Tzanck test</td><td>Smear from vesicle base &rarr; multinucleated giant cells under microscope = confirms HSV or VZV. Fast but largely replaced by PCR.</td></tr>
+</tbody></table>
+<div class="sec-hdr">Tissue removal &amp; wound procedures</div>
+<table class="dtable"><colgroup><col style="width:22%"><col style="width:78%"></colgroup>
+<thead><tr><th>Term</th><th>Definition &amp; notes</th></tr></thead>
+<tbody>
+<tr><td class="mean">Curettage</td><td>Scraping/scooping tissue removal using a curette (spoon-shaped instrument). For BCC, seborrheic keratoses, warts. Often followed by electrodesiccation (burning the base).</td></tr>
+<tr><td class="mean">D&eacute;bridement</td><td>Removal of dead/devitalized tissue to promote healing. Methods: surgical (most effective), mechanical, enzymatic (collagenase), autolytic, biological (maggot therapy). Essential for burns and decubitus ulcers.</td></tr>
+<tr><td class="mean">Escharotomy</td><td>eschar/o + -tomy = incision into eschar. Emergency for full-thickness circumferential burns &mdash; rigid eschar constricts as tissue swells &rarr; compartment syndrome. Linear incisions through eschar release the constriction.</td></tr>
+<tr><td class="mean">Mohs surgery</td><td>Micrographic surgery: layers removed + examined under microscope in real-time until clear margins confirmed. Highest cure rate for BCC/SCC. Tissue-sparing &mdash; for tumors on face, ears, nose.</td></tr>
+<tr><td class="mean">Cryosurgery</td><td>Liquid nitrogen (&minus;196&deg;C) freezes and destroys tissue. For warts, seborrheic keratoses, actinic keratoses, BCC. Ice crystal formation &rarr; cell death &rarr; lesion falls off in 1-2 weeks.</td></tr>
+<tr><td class="mean">Incision and drainage (I&amp;D)</td><td>Surgical incision into abscess to drain pus. Essential for furuncles, carbuncles, infected cysts. Wound left open or lightly packed.</td></tr>
+</tbody></table>
+<div class="sec-hdr">Skin grafting</div>
+<div class="card-grid">
+<div class="ccard"><span class="cwt" style="background:var(--bg-success);color:var(--text-success)">Autograft</span><div class="ctitle">Patient&rsquo;s own skin (best)</div><div class="cdef">auto- = self. No rejection &mdash; best option. STSG (split-thickness): epidermis + partial dermis, can be meshed. FTSG (full-thickness): better cosmetic, smaller areas. Required for large burns.</div></div>
+<div class="ccard"><span class="cwt" style="background:var(--bg-info);color:var(--text-info)">Allograft</span><div class="ctitle">Same species &mdash; cadaver (temporary)</div><div class="cdef">allo- = other/same species. Cadaveric skin &mdash; temporary biological dressing. Rejected in 10-21 days. Used when patient lacks enough donor skin.</div></div>
+<div class="ccard"><span class="cwt" style="background:var(--bg-warning);color:var(--text-warning)">Xenograft</span><div class="ctitle">Different species &mdash; pig (temporary)</div><div class="cdef">xen/o = foreign/strange. Usually porcine (pig skin). Temporary &mdash; rejected in 10-14 days. Reduces evaporative loss and infection while donor sites heal.</div></div>
+</div>
+<div class="sec-hdr">Cosmetic procedures</div>
+<div class="cl-grid">
+<div class="cl-card"><div class="cl-term">Rhytidectomy</div><div class="cl-break">rhytid/o + -ectomy</div><div class="cl-def">Facelift &mdash; surgical removal/tightening to reduce wrinkles. rhytid/o (wrinkle) + -ectomy (removal).</div></div>
+<div class="cl-card"><div class="cl-term">Dermatoplasty</div><div class="cl-break">dermat/o + -plasty</div><div class="cl-def">Surgical repair of skin by grafting. dermat/o (skin) + -plasty (repair/reconstruction).</div></div>
+<div class="cl-card"><div class="cl-term">Blepharoplasty</div><div class="cl-break">blephar/o + -plasty</div><div class="cl-def">Eyelid repair/reconstruction. Removes excess eyelid skin and fat &mdash; cosmetic or functional.</div></div>
+<div class="cl-card"><div class="cl-term">Liposuction / Lipectomy</div><div class="cl-break">lip/o + -ectomy</div><div class="cl-def">Liposuction = suction removal of fat. Lipectomy = surgical fat excision. Both remove adipose tissue.</div></div>
+</div>
+<div class="sec-hdr">Routes of drug administration</div>
+<div class="card-grid">
+<div class="ccard"><span class="cwt" style="background:var(--bg-info);color:var(--text-info)">Intradermal (ID)</span><div class="ctitle">intra- = WITHIN the skin</div><div class="cdef">Injection within the dermis. Creates raised wheal/bleb. 15&deg; angle, bevel up, 0.1 mL. TB Mantoux test, allergy testing, local anesthesia. Read TB test at 48-72 hrs &mdash; measure induration (not redness).</div></div>
+<div class="ccard"><span class="cwt" style="background:var(--bg-success);color:var(--text-success)">Subcutaneous (SQ/SC)</span><div class="ctitle">sub- = BELOW the skin</div><div class="cdef">Injection into fatty subcutaneous tissue. 45-90&deg; angle, 0.5-1.5 mL. Slower than IV. Insulin, heparin, vaccines. Sites: abdomen, upper arm, thigh.</div></div>
+<div class="ccard"><span class="cwt" style="background:var(--bg-warning);color:var(--text-warning)">Transdermal (TTS)</span><div class="ctitle">trans- = THROUGH the skin</div><div class="cdef">Medication diffuses through all skin layers into systemic circulation. Bypasses GI first-pass metabolism, sustained release. Patches: nicotine, fentanyl, estrogen, nitroglycerin, scopolamine.</div></div>
+<div class="ccard"><span class="cwt" style="background:var(--bg-muted);color:var(--text-secondary)">Topical</span><div class="ctitle">ON the skin surface</div><div class="cdef">Applied directly to skin surface. Creams, ointments, gels, lotions. Local effect (corticosteroids, antifungals) or systemic (nitroglycerin cream).</div></div>
+</div>
+<div class="sec-hdr">Pharmacology highlights</div>
+<div class="card-grid">
+<div class="ccard"><span class="cwt" style="background:var(--bg-warning);color:var(--text-warning)">Keratolytics</span><div class="ctitle">kerat/o + -lytic = dissolves keratin</div><div class="cdef">Salicylic acid (warts, calluses, psoriasis), urea (xerosis, onychomycosis), lactic acid. Break down hyperkeratotic skin.</div></div>
+<div class="ccard"><span class="cwt" style="background:var(--bg-danger);color:var(--text-danger)">Pediculicide</span><div class="ctitle">pedicul/i + -cide = kills lice</div><div class="cdef">Permethrin (synthetic pyrethroid), pyrethrin (natural). First-line for pediculosis. Must also remove nits with fine comb.</div></div>
+<div class="ccard"><span class="cwt" style="background:var(--bg-info);color:var(--text-info)">Retinoids</span><div class="ctitle">Vitamin A derivatives</div><div class="cdef">Tretinoin (topical &mdash; acne, photoaging); isotretinoin/Accutane (oral &mdash; severe acne). Highly teratogenic &mdash; requires iPLEDGE enrollment.</div></div>
+<div class="ccard"><span class="cwt" style="background:var(--bg-success);color:var(--text-success)">Antifungals</span><div class="ctitle">Against myc/o infections</div><div class="cdef">Topical azoles (clotrimazole, miconazole) for tinea/candidiasis. Oral terbinafine for onychomycosis. Inhibit ergosterol in fungal cell membranes.</div></div>
+</div>
+
+</div>
+<div class="sec" id="tab-flashcards">
+<div class="fc-controls">
+<select class="fc-sel" id="fc-cat" onchange="initFC()">
+<option value="all">All categories</option>
+<option value="prefix">Prefixes</option>
+<option value="suffix">Suffixes</option>
+<option value="combining">Combining forms</option>
+<option value="clinical">Clinical terms</option>
+<option value="ap">A&P terms</option>
+</select>
+<button class="btn" onclick="shuffleFC()">Shuffle</button>
+<span class="fc-prog" id="fc-prog">&mdash;</span>
+</div>
+<div class="flashcard" id="flashcard" onclick="flipFC()">
+<span class="fc-badge" id="fc-badge"></span>
+<div class="fc-front" id="fc-front"></div>
+<div class="fc-back" id="fc-back"><div class="meaning" id="fc-meaning"></div><div class="example" id="fc-example"></div></div>
+<div class="fc-hint" id="fc-hint">click to reveal</div>
+</div>
+<div class="fc-actions">
+<button class="btn btn-no" onclick="markFC(false)">&#10005; Still learning</button>
+<button class="btn btn-ok" onclick="markFC(true)">&#10003; Got it</button>
+<button class="btn" onclick="prevFC()">&larr; Prev</button>
+<button class="btn" onclick="nextFC()">Next &rarr;</button>
+</div>
+<div class="fc-score" id="fc-score"></div>
+</div>
+<div class="sec" id="tab-quiz">
+<div id="quiz-wrap">
+<div class="quiz-q" id="quiz-q"></div>
+<div class="quiz-opts" id="quiz-opts"></div>
+<div class="qfb" id="quiz-fb"></div>
+<button class="btn" id="quiz-next" onclick="nextQ()" style="display:none">Next &rarr;</button>
+<div class="qctr" id="quiz-ctr"></div>
+</div>
+<div id="quiz-done" style="display:none">
+<div class="score-wrap"><div class="score-num" id="quiz-final"></div><div class="score-lbl">correct answers</div>
+<div style="display:flex;gap:8px;justify-content:center;margin-top:1rem"><button class="btn" onclick="startQuiz()">Try again</button></div>
+</div>
+</div>
+</div>
+</div></div>
+<script>
+const TM={prefix:{label:"Prefix",bg:"#fff8e1",c:"#854F0B"},suffix:{label:"Suffix",bg:"#e6f4ea",c:"#1b5e20"},combining:{label:"Combining",bg:"#e8f0fc",c:"#1a5c9c"},clinical:{label:"Clinical",bg:"#fce8e8",c:"#9c2020"},ap:{label:"A&P",bg:"#f7f5f2",c:"#555555"}};
+const DATA=[
+  {term:"an-",type:"prefix",meaning:"without, absence of",extra:"anhidrosis (no sweating), anesthesia. an- before vowels; a- before consonants."},
+  {term:"crypt-",type:"prefix",meaning:"hidden, concealed",extra:"onychocryptosis (hidden/ingrown nail). Greek kryptos = hidden."},
+  {term:"epi-",type:"prefix",meaning:"above, upon, on",extra:"epidermis (upon the skin = outermost layer), eponychium (upon the nail = cuticle)"},
+  {term:"hyper-",type:"prefix",meaning:"above, excessive, elevated",extra:"hypertrichosis (excessive hair), hyperhidrosis (excessive sweating)"},
+  {term:"intra-",type:"prefix",meaning:"within, inside",extra:"intradermal (within the skin — ID injection, TB Mantoux test). Not inter- (between)."},
+  {term:"par-",type:"prefix",meaning:"beside, near, abnormal",extra:"paronychia (infection beside/around the nail fold). Shortened form of para-."},
+  {term:"sub-",type:"prefix",meaning:"below, under, beneath",extra:"subcutaneous (below the skin), subungual (below the nail)"},
+  {term:"trans-",type:"prefix",meaning:"through, across, beyond",extra:"transdermal (through the skin — patches for systemic drug delivery). Compare intra-."},
+  {term:"-cide",type:"suffix",meaning:"killing agent, that which kills",extra:"pediculicide (kills lice), fungicide, scabicide. -cide KILLS; -lytic DISSOLVES."},
+  {term:"-ectomy",type:"suffix",meaning:"surgical removal",extra:"rhytidectomy (facelift — removes wrinkles), lipectomy (fat removal)"},
+  {term:"-itis",type:"suffix",meaning:"inflammation",extra:"folliculitis (follicle inflammation), dermatitis, onychitis"},
+  {term:"-lytic",type:"suffix",meaning:"destroying, dissolving, breaking down",extra:"keratolytic (dissolves keratin — for warts, calluses). -lytic DISSOLVES; -cide KILLS."},
+  {term:"-oma",type:"suffix",meaning:"tumor, mass, swelling",extra:"melanoma (malignant melanocyte tumor), hematoma (blood swelling), lipoma (benign fat)"},
+  {term:"-osis",type:"suffix",meaning:"abnormal condition, process",extra:"onychocryptosis (ingrown nail), onychomycosis (nail fungus), pediculosis, anhidrosis"},
+  {term:"-plasty",type:"suffix",meaning:"surgical repair/reconstruction",extra:"dermatoplasty (skin repair/grafting), blepharoplasty (eyelid repair)"},
+  {term:"cutane/o",type:"combining",meaning:"skin (Latin)",extra:"subcutaneous (below skin), percutaneous (through skin). Latin origin."},
+  {term:"dermat/o, derm/o",type:"combining",meaning:"skin (Greek)",extra:"dermatitis, dermatology, dermatoplasty. dermat/o for compound clinical terms."},
+  {term:"follicul/o",type:"combining",meaning:"follicle",extra:"folliculitis (hair follicle inflammation). Hair follicle = tube-like depression in dermis."},
+  {term:"hidr/o",type:"combining",meaning:"sweat, perspiration",extra:"anhidrosis (no sweat), hyperhidrosis. hidr/o (SWEAT) NOT hydr/o (WATER) — one letter!"},
+  {term:"kerat/o",type:"combining",meaning:"hard, horny, keratin",extra:"keratolytic (dissolves keratin), keratosis. Also = cornea in ophthalmology."},
+  {term:"melan/o",type:"combining",meaning:"black, dark, melanin",extra:"melanoma (malignant melanocyte tumor), melanin (skin pigment), melanocyte"},
+  {term:"myc/o",type:"combining",meaning:"fungus, mold",extra:"onychomycosis (nail fungus), dermatomycosis (skin fungal infection)"},
+  {term:"onych/o",type:"combining",meaning:"nail (Greek)",extra:"onychocryptosis (ingrown nail), onychomycosis (nail fungus), paronychia. Greek — pathological terms."},
+  {term:"pedicul/i",type:"combining",meaning:"lice (singular: louse)",extra:"pediculicide (kills lice), pediculosis (lice infestation). Uses 'i' as combining vowel."},
+  {term:"rhytid/o",type:"combining",meaning:"wrinkle",extra:"rhytidectomy (facelift = surgical removal of wrinkles). Greek rhytis = wrinkle."},
+  {term:"seb/o",type:"combining",meaning:"sebum, oil",extra:"seborrhea (seb/o + -rrhea = excess sebum flow = oily skin/scalp)"},
+  {term:"trich/o",type:"combining",meaning:"hair (Greek)",extra:"hypertrichosis (excess hair growth anywhere on body). trich/o not rachi/o (spine)."},
+  {term:"ungu/o",type:"combining",meaning:"nail (Latin)",extra:"subungual (below the nail — subungual hematoma from crush injury). Latin — directional terms."},
+  {term:"Melanoma",type:"clinical",meaning:"melan/o + -oma = malignant tumor of melanocytes. Most deadly skin cancer.",extra:"ABCDE: Asymmetry, Border, Color, Diameter >6mm, Evolution. Wide excision, immunotherapy."},
+  {term:"Onychocryptosis",type:"clinical",meaning:"onych/o + crypt- + -osis = condition of hidden/ingrown nail",extra:"Nail edge grows into nail fold. Great toe most common. Rx: warm soaks, partial nail avulsion."},
+  {term:"Onychomycosis",type:"clinical",meaning:"onych/o + myc/o + -osis = fungal nail infection (most common nail disorder)",extra:"Thickened, discolored, brittle nails. Terbinafine oral (3-6 months)."},
+  {term:"Paronychia",type:"clinical",meaning:"par- + onych/o + -ia = infection beside/around the nail fold",extra:"Acute = Staph aureus; Chronic = Candida. Rx: warm soaks, I&D, antifungal."},
+  {term:"Alopecia",type:"clinical",meaning:"Hair loss — partial or complete",extra:"Androgenetic (most common), alopecia areata (autoimmune patchy), telogen effluvium (stress)."},
+  {term:"Hypertrichosis",type:"clinical",meaning:"hyper- + trich/o + -osis = excessive hair growth anywhere on body",extra:"Not the same as hirsutism (androgen-driven female-pattern hair growth)."},
+  {term:"Anhidrosis",type:"clinical",meaning:"an- + hidr/o + -osis = absence of sweating. Dangerous in heat.",extra:"Cannot thermoregulate → heat stroke risk. Causes: autonomic dysfunction, nerve damage."},
+  {term:"Seborrhea",type:"clinical",meaning:"seb/o + -rrhea = excessive sebum flow → oily skin/scalp",extra:"Associated with seborrheic dermatitis (dandruff) and acne."},
+  {term:"Tinea pedis",type:"clinical",meaning:"Fungal infection of the foot = athlete's foot",extra:"Also: tinea capitis (scalp), corporis (ringworm), cruris (jock itch). Rx: topical antifungals."},
+  {term:"Pediculicide",type:"clinical",meaning:"pedicul/i + -cide = agent that kills lice",extra:"Permethrin, pyrethrin. First-line for pediculosis. Must also remove nits."},
+  {term:"Rhytidectomy",type:"clinical",meaning:"rhytid/o + -ectomy = surgical removal of wrinkles = facelift",extra:"rhytid/o = wrinkle from Greek rhytis."},
+  {term:"Keratolytic",type:"clinical",meaning:"kerat/o + -lytic = agent that dissolves/breaks down keratin",extra:"Salicylic acid for warts/calluses/psoriasis. -lytic DISSOLVES keratin; -cide would KILL."},
+  {term:"Ecchymosis",type:"clinical",meaning:"Bruise — extravasation of blood into skin >2 mm. Non-blanching.",extra:"Red→purple→green→yellow (hemoglobin degradation). Multiple unexplained → investigate."},
+  {term:"Nevus",type:"clinical",meaning:"Mole — benign collection of melanocytes. Plural: nevi.",extra:"Dysplastic nevus = atypical mole → increased melanoma risk. Monitor with ABCDE."},
+  {term:"Decubitus ulcer",type:"clinical",meaning:"Pressure-induced necrosis over bony prominences. Stages I-IV.",extra:"Prevention: reposition every 2 hours. Rx: débridement, wound care, surgery."},
+  {term:"Intradermal (ID)",type:"clinical",meaning:"intra- + derm/o = within the skin. Route for TB Mantoux test and allergy testing.",extra:"Creates raised wheal. 15° angle, bevel up. 0.1 mL. Read induration at 48-72 hrs."},
+  {term:"Transdermal",type:"clinical",meaning:"trans- + derm/o = through/across the skin into systemic circulation",extra:"Nicotine, fentanyl, estrogen, nitroglycerin patches. Bypasses GI first-pass metabolism."},
+  {term:"Subcutaneous",type:"clinical",meaning:"sub- + cutane/o = below/under the skin. Injection into fatty tissue.",extra:"Insulin, heparin injections. 45-90° angle. Sites: abdomen, upper arm, thigh."},
+  {term:"Dermis",type:"ap",meaning:"Middle skin layer (derm/o) = corium. Vascular connective tissue.",extra:"Contains blood vessels, glands, hair follicles, sensory nerves."},
+  {term:"Epidermis",type:"ap",meaning:"Outermost skin layer (epi- + derm/o). Avascular stratified squamous epithelium.",extra:"Keratinocytes (produce keratin) and melanocytes (produce melanin). Renewed every ~28-30 days."},
+  {term:"Eponychium",type:"ap",meaning:"The cuticle (epi- + onych/o = upon the nail). Seals nail-skin junction.",extra:"Prevents infection by sealing the space between nail and skin fold."},
+  {term:"Sebaceous glands",type:"ap",meaning:"Oil glands (seb/o) secreting sebum. ABSENT on palms and soles.",extra:"Blocked → comedone (blackhead/whitehead) → acne vulgaris if bacteria colonize."},
+  {term:"Sudoriferous glands",type:"ap",meaning:"Sweat glands (hidr/o, sudor/i). Eccrine (thermoregulation) and apocrine (body odor).",extra:"Anhidrosis = absence of sweating (dangerous). Hyperhidrosis = excessive."},
+  {term:"Subcutaneous tissue",type:"ap",meaning:"Deepest layer (sub- + cutane/o) = hypodermis. Adipose tissue + loose connective tissue.",extra:"Insulation, energy storage, cushioning. Site of SQ injections (insulin, heparin)."},
+];
+let fcCards=[],fcIdx=0,fcFlipped=false,fcGot=new Set(),fcNope=new Set();
+let quizQs=[],quizIdx=0,quizScore=0,quizAnswered=false;
+function showTab(id,btn){document.querySelectorAll('.sec').forEach(s=>s.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById('tab-'+id).classList.add('active');btn.classList.add('active');if(id==='flashcards'&&fcCards.length===0)initFC();if(id==='quiz')startQuiz();}
+function initFC(){const cat=document.getElementById('fc-cat').value;fcCards=cat==='all'?[...DATA]:DATA.filter(d=>d.type===cat);fcCards.sort(()=>Math.random()-0.5);fcIdx=0;fcFlipped=false;fcGot=new Set();fcNope=new Set();showCard();}
+function showCard(){if(!fcCards.length)return;const c=fcCards[fcIdx],m=TM[c.type];const b=document.getElementById('fc-badge');b.textContent=m.label;b.style.background=m.bg;b.style.color=m.c;document.getElementById('fc-front').textContent=c.term;document.getElementById('fc-meaning').textContent=c.meaning;document.getElementById('fc-example').textContent=c.extra?'Note: '+c.extra:'';document.getElementById('fc-front').style.display='block';document.getElementById('fc-back').style.display='none';document.getElementById('fc-hint').style.display='block';fcFlipped=false;document.getElementById('fc-prog').textContent='Card '+(fcIdx+1)+' of '+fcCards.length;updScore();}
+function flipFC(){if(fcFlipped)return;fcFlipped=true;document.getElementById('fc-front').style.display='none';document.getElementById('fc-back').style.display='block';document.getElementById('fc-hint').style.display='none';}
+function markFC(ok){if(ok)fcGot.add(fcIdx);else fcNope.add(fcIdx);nextFC();}
+function nextFC(){fcIdx=(fcIdx+1)%fcCards.length;showCard();}
+function prevFC(){fcIdx=(fcIdx-1+fcCards.length)%fcCards.length;showCard();}
+function shuffleFC(){fcCards.sort(()=>Math.random()-0.5);fcIdx=0;showCard();}
+function updScore(){document.getElementById('fc-score').innerHTML='<span style="color:#1b5e20">\u2713 '+fcGot.size+' got it</span> &nbsp; <span style="color:#9c2020">\u2717 '+fcNope.size+' still learning</span> &nbsp; <span style="color:#888">'+(fcCards.length-fcGot.size-fcNope.size)+' unseen</span>';}
+function shuffle(a){return[...a].sort(()=>Math.random()-0.5);}
+function startQuiz(){document.getElementById('quiz-wrap').style.display='block';document.getElementById('quiz-done').style.display='none';quizQs=shuffle(DATA).slice(0,15);quizIdx=0;quizScore=0;quizAnswered=false;showQ();}
+function showQ(){if(quizIdx>=quizQs.length){endQuiz();return;}const q=quizQs[quizIdx];document.getElementById('quiz-q').textContent='What does "'+q.term+'" mean?';document.getElementById('quiz-fb').textContent='';document.getElementById('quiz-next').style.display='none';document.getElementById('quiz-ctr').textContent='Question '+(quizIdx+1)+' of '+quizQs.length;const wrong=shuffle(DATA.filter(d=>d.term!==q.term)).slice(0,3).map(d=>d.meaning);const opts=shuffle([q.meaning,...wrong]);document.getElementById('quiz-opts').innerHTML=opts.map(function(o){return'<button class="qopt" onclick="checkA(this,\''+o.replace(/\\/g,'\\\\').replace(/'/g,"\\'")+'\'">'+o+'</button>';}).join('');quizAnswered=false;document.getElementById('quiz-opts')._correct=q.meaning;}
+function checkA(btn,chosen){if(quizAnswered)return;quizAnswered=true;const correct=document.getElementById('quiz-opts')._correct;document.querySelectorAll('.qopt').forEach(function(o){o.disabled=true;if(o.textContent.trim()===correct.trim())o.classList.add('correct');});const fb=document.getElementById('quiz-fb');if(chosen.trim()===correct.trim()){quizScore++;fb.textContent='\u2713 Correct!';fb.style.color='#1b5e20';}else{btn.classList.add('wrong');fb.textContent='\u2717 Correct: '+correct;fb.style.color='#9c2020';}document.getElementById('quiz-next').style.display='inline-block';}
+function nextQ(){quizIdx++;showQ();}
+function endQuiz(){document.getElementById('quiz-wrap').style.display='none';document.getElementById('quiz-done').style.display='block';document.getElementById('quiz-final').textContent=quizScore+' / '+quizQs.length;}
+window.onload=function(){document.getElementById('quiz-wrap').style.display='block';}
+</script>
+</body>
+</html>
